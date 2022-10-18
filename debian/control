@@ -1,0 +1,54 @@
+Source: rich
+Section: python
+Priority: optional
+Maintainer: Sandro Tosi <morph@debian.org>
+Uploaders: Debian Python Team <team+python@tracker.debian.org>,
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-commonmark (>= 0.9.0),
+               python3-colorama (>= 0.4.0),
+               python3-mypy (>= 0.782),
+               python3-pygments (>= 2.6.0),
+               python3-pytest,
+               python3-setuptools,
+               python3-typing-extensions (>= 3.7.4),
+Standards-Version: 4.5.1
+Homepage: https://github.com/willmcgugan/rich
+Vcs-Git: https://salsa.debian.org/python-team/packages/rich.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/rich
+
+Package: python3-rich
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+Recommends: ${python3:Recommends},
+Suggests: ${python3:Suggests},
+Description: render rich text, tables, progress bars, syntax highlighting, markdown and more
+ Rich is a Python library for rich text and beautiful formatting in the
+ terminal.
+ .
+ The Rich API makes it easy to add color and style to terminal output. Rich can
+ also render pretty tables, progress bars, markdown, syntax highlighted source
+ code, tracebacks, and more — out of the box.
+ .
+ Here's a list of the core functionalities of rich:
+ .
+  * to effortlessly add rich output to your application, you can import the rich
+    print method, which has the same signature as the builtin Python function
+  * Rich can be installed in the Python REPL, so that any data structures will
+    be pretty printed and highlighted
+  * for more control over rich terminal content, import and construct a Console
+    object. The Console object has a print method which has an intentionally
+    similar interface to the builtin print function
+  * to insert an emoji in to console output place the name between two colons
+  * Rich can render flexible tables with unicode box characters. There is a
+    large variety of formatting options for borders, styles, cell alignment etc
+  * Rich can render multiple flicker-free progress bars to track long-running
+    tasks.
+  * Rich can render content in neat columns with equal or optimal width.
+  * Rich can render markdown and does a reasonable job of translating the
+    formatting to the terminal
+  * Rich can render beautiful tracebacks which are easier to read and show more
+    code than standard Python tracebacks. You can set Rich as the default
+    traceback handler so all uncaught exceptions will be rendered by Rich.

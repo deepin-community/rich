@@ -1,0 +1,80 @@
+rich (10.12.0-1) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 06 Jul 2022 03:46:14 -0400
+
+rich (10.12.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 07 Nov 2021 21:09:08 -0500
+
+rich (9.11.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 17 Feb 2021 23:41:59 -0500
+
+rich (9.9.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 27 Jan 2021 00:14:21 -0500
+
+rich (9.8.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 13 Jan 2021 23:50:37 -0500
+
+rich (9.6.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Use the new Debian Python Team contact name and address
+  * debian/copyright
+    - extend packaging copyright years
+    - update upstream copyright notices
+    - wrap MIT license text
+  * debian/control
+    - bump Standards-Version to 4.5.1 (no changes needed)
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 06 Jan 2021 23:47:43 -0500
+
+rich (9.1.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 25 Oct 2020 21:37:56 -0400
+
+rich (8.0.0-2) unstable; urgency=medium
+
+  * debian/control
+    - use versioned b-d to match what's in setup.py
+  * debian/rules
+    - run all tests, now that b-d are at the right version
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 09 Oct 2020 16:57:40 -0400
+
+rich (8.0.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Sandro Tosi ]
+  * New upstream release
+  * debian/watch
+    - track github for releases
+  * debian/setup.py
+    - refresh from pyproject.toml
+  * debian/rules
+    - skip failing test (issues/360)
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 07 Oct 2020 23:25:31 -0400
+
+rich (1.3.1-1) unstable; urgency=low
+
+  * Initial release; Closes: #954301
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 04 Jun 2020 05:51:44 +0000
