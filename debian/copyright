@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: rich
 Upstream-Contact: Will McGugan <willmcgugan@gmail.com>
-Source: https://github.com/willmcgugan/rich
+Source: https://github.com/Textualize/rich
 
 Files: *
 Copyright: 2020 Will McGugan
@@ -13,7 +13,7 @@ License: MIT
 Comment: from cli-spinners
 
 Files: debian/*
-Copyright: 2020-2021 © Sandro Tosi <morph@debian.org>
+Copyright: 2020-2023 © Sandro Tosi <morph@debian.org>
 License: MIT
 
 License: MIT

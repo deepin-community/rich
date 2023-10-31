@@ -1,28 +1,33 @@
 [![Downloads](https://pepy.tech/badge/rich/month)](https://pepy.tech/project/rich)
 [![PyPI version](https://badge.fury.io/py/rich.svg)](https://badge.fury.io/py/rich)
-[![codecov](https://codecov.io/gh/willmcgugan/rich/branch/master/graph/badge.svg)](https://codecov.io/gh/willmcgugan/rich)
+[![codecov](https://codecov.io/gh/Textualize/rich/branch/master/graph/badge.svg)](https://codecov.io/gh/Textualize/rich)
 [![Rich blog](https://img.shields.io/badge/blog-rich%20news-yellowgreen)](https://www.willmcgugan.com/tag/rich/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/willmcgugan.svg?style=social)](https://twitter.com/willmcgugan)
 
-![Logo](https://github.com/willmcgugan/rich/raw/master/imgs/logo.svg)
+![Logo](https://github.com/textualize/rich/raw/master/imgs/logo.svg)
 
-[English readme](https://github.com/willmcgugan/rich/blob/master/README.md)
- • [中文 readme](https://github.com/willmcgugan/rich/blob/master/README.cn.md)
- • [Lengua española readme](https://github.com/willmcgugan/rich/blob/master/README.es.md)
- • [Deutsche readme](https://github.com/willmcgugan/rich/blob/master/README.de.md)
- • [Läs på svenska](https://github.com/willmcgugan/rich/blob/master/README.sv.md)
- • [日本語 readme](https://github.com/willmcgugan/rich/blob/master/README.ja.md)
- • [한국어 readme](https://github.com/willmcgugan/rich/blob/master/README.kr.md)
- • [Français readme](https://github.com/willmcgugan/rich/blob/master/README.fr.md)
- • [Schwizerdütsch readme](https://github.com/willmcgugan/rich/blob/master/README.de-ch.md)
- • [हिन्दी readme](https://github.com/willmcgugan/rich/blob/master/README.hi.md)
- • [Português brasileiro readme](https://github.com/willmcgugan/rich/blob/master/README.pt-br.md)
+[English readme](https://github.com/textualize/rich/blob/master/README.md)
+ • [简体中文 readme](https://github.com/textualize/rich/blob/master/README.cn.md)
+ • [正體中文 readme](https://github.com/textualize/rich/blob/master/README.zh-tw.md)
+ • [Lengua española readme](https://github.com/textualize/rich/blob/master/README.es.md)
+ • [Deutsche readme](https://github.com/textualize/rich/blob/master/README.de.md)
+ • [Läs på svenska](https://github.com/textualize/rich/blob/master/README.sv.md)
+ • [日本語 readme](https://github.com/textualize/rich/blob/master/README.ja.md)
+ • [한국어 readme](https://github.com/textualize/rich/blob/master/README.kr.md)
+ • [Français readme](https://github.com/textualize/rich/blob/master/README.fr.md)
+ • [Schwizerdütsch readme](https://github.com/textualize/rich/blob/master/README.de-ch.md)
+ • [हिन्दी readme](https://github.com/textualize/rich/blob/master/README.hi.md)
+ • [Português brasileiro readme](https://github.com/textualize/rich/blob/master/README.pt-br.md)
+ • [Italian readme](https://github.com/textualize/rich/blob/master/README.it.md)
+ • [Русский readme](https://github.com/textualize/rich/blob/master/README.ru.md)
+  • [فارسی readme](https://github.com/textualize/rich/blob/master/README.fa.md)
+ • [Türkçe readme](https://github.com/textualize/rich/blob/master/README.tr.md)
 
 Rich isch ä Python Library för _rich_ Text ond ganz schöni formatiärig im Törminäl
 
 D [Rich API](https://rich.readthedocs.io/en/latest/) machts ganz eifach zom Farbä ond Stiil zu de Törminälusgob hinzu z füäge. Rich cha au schöni Tabelle, Progressbare, Markdown, Syntax hervorhebe, Tracebäcks und meh darstelle — fix fertig usem Böxli.
 
-![Features](https://github.com/willmcgugan/rich/raw/master/imgs/features.png)
+![Features](https://github.com/textualize/rich/raw/master/imgs/features.png)
 
 E Video Iifüärig öber Rich geds onder [calmcode.io](https://calmcode.io/rich/introduction.html) vo [@fishnets88](https://twitter.com/fishnets88).
 
@@ -30,21 +35,21 @@ Lueg was [anderi öber Rich säged](https://www.willmcgugan.com/blog/pages/post/
 
 ## Kompatibilität
 
-Rich funktioniert mit Linux, OSX ond Windows. True color / emoji funktioniert mit em neue Windows Törminäl, s klassische Törminäl isch of 16 Farbe limitiärt. Rich brucht Pzthon 3.6.1 oder neuer.
+Rich funktioniert mit Linux, OSX ond Windows. True color / emoji funktioniert mit em neue Windows Törminäl, s klassische Törminäl isch of 16 Farbe limitiärt. Rich brucht Python 3.6.3 oder neuer.
 
 Rich funktioniert mit [Jupyter notebooks](https://jupyter.org/) ohni irgendwelchä zuäsätzloche konfiguration.
 
 ## Installation
 
-Installation mit `pip` oder mit dim liäblings PyPi Päckli-Mangager.
+Installation mit `pip` oder mit dim liäblings PyPI Päckli-Manager.
 
-```
-pip install rich
+```sh
+python -m pip install rich
 ```
 
 Für das do us zum d Rich usgob im Törminäl z teste:
 
-```
+```sh
 python -m rich
 ```
 
@@ -58,7 +63,7 @@ from rich import print
 print("Hello, [bold magenta]World[/bold magenta]!", ":vampire:", locals())
 ```
 
-![Hello World](https://github.com/willmcgugan/rich/raw/master/imgs/print.png)
+![Hello World](https://github.com/textualize/rich/raw/master/imgs/print.png)
 
 ## Rich REPL
 
@@ -69,11 +74,11 @@ Rich cha i de Python REPL installiert werde so dass irgend e Datestruktuur hübs
 >>> pretty.install()
 ```
 
-![REPL](https://github.com/willmcgugan/rich/raw/master/imgs/repl.png)
+![REPL](https://github.com/textualize/rich/raw/master/imgs/repl.png)
 
 ## Console bruchä
 
-Für meh kontrolle öber de Törminäl inhalt, importiär und instanziär e [Console](https://rich.readthedocs.io/en/latest/reference/console.html#rich.console.Console) Objekt. 
+Für meh kontrolle öber de Törminäl inhalt, importiär und instanziär e [Console](https://rich.readthedocs.io/en/latest/reference/console.html#rich.console.Console) Objekt.
 
 ```python
 from rich.console import Console
@@ -97,7 +102,7 @@ console.print("Hello", "World!", style="bold red")
 
 D Usgob gsiät öppe ä so us:
 
-![Hello World](https://github.com/willmcgugan/rich/raw/master/imgs/hello_world.png)
+![Hello World](https://github.com/textualize/rich/raw/master/imgs/hello_world.png)
 
 Da isch guät für d Gstalltig vom Text pro Liniä. Vör ä granularäri Gstalltig hed Rich e spezielli Markup mitäre ähnloche Befehlsufbau wiä [bbcode](https://en.wikipedia.org/wiki/BBCode). Do es Bispiil:
 
@@ -105,7 +110,7 @@ Da isch guät für d Gstalltig vom Text pro Liniä. Vör ä granularäri Gstallt
 console.print("Where there is a [bold cyan]Will[/bold cyan] there [u]is[/u] a [i]way[/i].")
 ```
 
-![Console Markup](https://github.com/willmcgugan/rich/raw/master/imgs/where_there_is_a_will.png)
+![Console Markup](https://github.com/textualize/rich/raw/master/imgs/where_there_is_a_will.png)
 
 Du chasch mitmäne Console Objekt mit wenig Ufwand aasprechendi Usgob erziile. Lueg do d [Console API](https://rich.readthedocs.io/en/latest/console.html) Dokumentation für d Details a.
 
@@ -119,11 +124,11 @@ Rich hät e [inspect](https://rich.readthedocs.io/en/latest/reference/init.html?
 >>> inspect(my_list, methods=True)
 ```
 
-![Log](https://github.com/willmcgugan/rich/raw/master/imgs/inspect.png)
+![Log](https://github.com/textualize/rich/raw/master/imgs/inspect.png)
 
 Lueg do d [inspect Dokumentation](https://rich.readthedocs.io/en/latest/reference/init.html#rich.inspect) für d Details a.
 
-# Rich Library
+# Rich-Bibliothek
 
 Rich häd ä Aazahl vo integriäte _renderables_ wo du chasch verwende zum eleganti Usgobe i dinner e CLI generiäre ond der hälfed bim debugge vo dim Code.
 
@@ -132,7 +137,7 @@ Drock of di folgende Öberschrifte für d Details:
 <details>
 <summary>Log</summary>
 
-S Console Objekt hät e `log()` Methode wo verglichbar zu de `print()` Schnittstell isch aber zuäsätzloch no e Spaltä för di aktuäll Zitt und d Datai mit de Zille wo de Ufruäf macht us git. Standartmässig tuät Rich es Syntax Highlighting für Python Strukturä sowiä repr Text machä. Went e Collection (wiä zum Bispiil dict oder list) loggsch wird Rich das hübsch Usgeh so dass es i de verfüägbari Platz ine passt. Do es Bispiil für e paar vo dene Funktionä.
+S Console Objekt hät e `log()` Methode wo verglichbar zu de `print()` Schnittstell isch aber zuäsätzloch no e Spaltä för di aktuäll Zitt und d Datai mit de Zille wo de Ufruäf macht us git. Standardmässig tuät Rich es Syntax Highlighting für Python Strukturä sowiä repr Text machä. Went e Collection (wiä zum Bispiil dict oder list) loggsch wird Rich das hübsch Usgeh so dass es i de verfüägbari Platz ine passt. Do es Bispiil für e paar vo dene Funktionä.
 
 ```python
 from rich.console import Console
@@ -159,7 +164,7 @@ test_log()
 
 Das do obe gid di folgend Usgob:
 
-![Log](https://github.com/willmcgugan/rich/raw/master/imgs/log.png)
+![Log](https://github.com/textualize/rich/raw/master/imgs/log.png)
 
 Beachte s Argument `log_locals` wo innere Tabelle di lokalä Variable us gid zur Zitt wo d Methodä ufgruäfä worde isch.
 
@@ -171,7 +176,7 @@ D log Methodä cha zum is Törminäl inne z Logge für langläbige Applikationä
 
 Du chasch au d Builtin [Handler Class](https://rich.readthedocs.io/en/latest/logging.html) verwende zum d Usgob vom Python logging Module z formatiäre und iifärbe. Do es Bispiil vo de Usgob:
 
-![Logging](https://github.com/willmcgugan/rich/raw/master/imgs/logging.png)
+![Logging](https://github.com/textualize/rich/raw/master/imgs/logging.png)
 
 </details>
 
@@ -194,11 +199,11 @@ Bitte verwend diä Funktion gschiid.
 
 Rich cha flexiibäl [Tabelle](https://rich.readthedocs.io/en/latest/tables.html) mit Boxä us Unicodezeiche generiäre. Es gid e Viilzahl vo Formatiärigsoptionä für Ränder, Stiil, Zelleusrichtig ond so witter.
 
-![table movie](https://github.com/willmcgugan/rich/raw/master/imgs/table_movie.gif)
+![table movie](https://github.com/textualize/rich/raw/master/imgs/table_movie.gif)
 
-D Animation obe isch mit [table_movie.py](https://github.com/willmcgugan/rich/blob/master/examples/table_movie.py) us em Bispiil Ordner erstellt worde.
+D Animation obe isch mit [table_movie.py](https://github.com/textualize/rich/blob/master/examples/table_movie.py) us em Bispiil-Ordner erstellt worde.
 
-Do es eifachs Tabelle Bispiil:
+Do es eifachs Tabelle-Bispiil:
 
 ```python
 from rich.console import Console
@@ -232,13 +237,13 @@ console.print(table)
 
 Das gid di folgend Usgob:
 
-![table](https://github.com/willmcgugan/rich/raw/master/imgs/table.png)
+![table](https://github.com/textualize/rich/raw/master/imgs/table.png)
 
 Beacht das d Konsole Markup glich wie bi `print()` ond `log()` generiärt wird. Ond zwor cha alles wo vo Rich generiert werde cha au im Chopf / Zille iigfüägt werde (sogar anderi Tabellene).
 
 D Klass `Table` isch gschiid gnuäg yum d Spaltebreite am verfüägbare Platz im Törminäl aazpasse und de Text gegäbenefalls umzbreche. Do isch s gliche Bispiil mit em Törminäl chlinner als d Tabelle vo obe:
 
-![table2](https://github.com/willmcgugan/rich/raw/master/imgs/table2.png)
+![table2](https://github.com/textualize/rich/raw/master/imgs/table2.png)
 
 </details>
 
@@ -258,13 +263,13 @@ for step in track(range(100)):
 
 Es isch nöd vill schwiriger zum mehräri Progress Bars hinzuä zfüäge. Do es Bispiil us de Doku:
 
-![progress](https://github.com/willmcgugan/rich/raw/master/imgs/progress.gif)
+![progress](https://github.com/textualize/rich/raw/master/imgs/progress.gif)
 
 D Spaltä cha so konfiguriärt werde das alli gwünschte Details aazeigt werded. D Built-in Spalte beinhaltät Prozentsatz, Dateigrössi, Dateigschwindikeit ond öbrigi Zitt. Do isch e andos Bispiil wo en laufände Download zeigt:
 
-![progress](https://github.com/willmcgugan/rich/raw/master/imgs/downloader.gif)
+![progress](https://github.com/textualize/rich/raw/master/imgs/downloader.gif)
 
-Zums selber usprobiäre lueg [examples/downloader.py](https://github.com/willmcgugan/rich/blob/master/examples/downloader.py) a, wo cha glichzittig mehräri URLs abelade und de Fortschritt aazeige.
+Zums selber usprobiäre lueg [examples/downloader.py](https://github.com/textualize/rich/blob/master/examples/downloader.py) a, wo cha glichzittig mehräri URLs abelade und de Fortschritt aazeige.
 
 </details>
 
@@ -289,7 +294,7 @@ with console.status("[bold green]Working on tasks...") as status:
 
 Das gid di folgendi Usgob im Törminäl.
 
-![status](https://github.com/willmcgugan/rich/raw/master/imgs/status.gif)
+![status](https://github.com/textualize/rich/raw/master/imgs/status.gif)
 
 D Spinner Animatione sind vo [cli-spinners](https://www.npmjs.com/package/cli-spinners) usglehnt. Du chasch en speziifischä Spinner mit em `spinner` Parameter uswähle. Start de folgend Befehl zom die verfüägbare Wert z gsiä:
 
@@ -297,9 +302,9 @@ D Spinner Animatione sind vo [cli-spinners](https://www.npmjs.com/package/cli-sp
 python -m rich.spinner
 ```
 
-De Befehlt obe generiärt di folgändi Usgob im Törminäl:
+De Befehl obe generiärt di folgändi Usgob im Törminäl:
 
-![spinners](https://github.com/willmcgugan/rich/raw/master/imgs/spinners.gif)
+![spinners](https://github.com/textualize/rich/raw/master/imgs/spinners.gif)
 
 </details>
 
@@ -316,16 +321,16 @@ python -m rich.tree
 
 Das generiärt di folgend Usgob:
 
-![markdown](https://github.com/willmcgugan/rich/raw/master/imgs/tree.png)
+![markdown](https://github.com/textualize/rich/raw/master/imgs/tree.png)
 
-Lueg s Bispiil Script [tree.py](https://github.com/willmcgugan/rich/blob/master/examples/tree.py) für e Darstellig vo irgend eim Ordner als Tree, glich wie de Linux Befehl `tree`.
+Lueg s Bispiil Script [tree.py](https://github.com/textualize/rich/blob/master/examples/tree.py) für e Darstellig vo irgend eim Ordner als Tree, glich wie de Linux Befehl `tree`.
 
 </details>
 
 <details>
-<summary>Columns</summary>
+<summary>Spaltene</summary>
 
-Rich can render content in neat [columns](https://rich.readthedocs.io/en/latest/columns.html) with equal or optimal width. Here's a very basic clone of the (MacOS / Linux) `ls` command which displays a directory listing in columns:
+Rich cha Inhalt i hübsche [Spaltene](https://rich.readthedocs.io/en/latest/columns.html) darstelle mit glichä oder optimale Breiti. Do isch e ganz eifachi kopii vom (MacOS / Linux) `ls` Befehl wo Ordner in Spaltene darstellt
 
 ```python
 import os
@@ -338,9 +343,9 @@ directory = os.listdir(sys.argv[1])
 print(Columns(directory))
 ```
 
-De folgend Screenshot isch d Usgob vom [columns example](https://github.com/willmcgugan/rich/blob/master/examples/columns.py) Bispiil, wo Date vonnere API hollt ond in Colums darstellt:
+De folgend Screenshot isch d Usgob vom [Spalte-Bispiil](https://github.com/textualize/rich/blob/master/examples/columns.py), wo Date vonnere API hollt ond in Spaltene darstellt:
 
-![columns](https://github.com/willmcgugan/rich/raw/master/imgs/columns.png)
+![columns](https://github.com/textualize/rich/raw/master/imgs/columns.png)
 
 </details>
 
@@ -349,7 +354,7 @@ De folgend Screenshot isch d Usgob vom [columns example](https://github.com/will
 
 Rich cha [markdown](https://rich.readthedocs.io/en/latest/markdown.html) übersetze ond leistet vernünftigi Ärbät bim formatiärige is Törminäl z übersetze.
 
-Zum Markdonw z übersetze importier d Klass `Markdown` und instanzier es mitem Markdown Text. Nocher gid mos uf de Konsolä us. Do es Bispiil:
+Zum Markdown z übersetze importier d Klass `Markdown` und instanzier es mitem Markdown Text. Nocher gid mos uf de Konsolä us. Do es Bispiil:
 
 ```python
 from rich.console import Console
@@ -363,7 +368,7 @@ console.print(markdown)
 
 Das wird d Usgob ungefär wie s Folgende geh:
 
-![markdown](https://github.com/willmcgugan/rich/raw/master/imgs/markdown.png)
+![markdown](https://github.com/textualize/rich/raw/master/imgs/markdown.png)
 
 </details>
 
@@ -398,22 +403,22 @@ console.print(syntax)
 
 Das wird d Usgob ungefär wie s Folgende geh:
 
-![syntax](https://github.com/willmcgugan/rich/raw/master/imgs/syntax.png)
+![syntax](https://github.com/textualize/rich/raw/master/imgs/syntax.png)
 
 </details>
 
 <details>
 <summary>Tracebacks</summary>
 
-Rich cha [wunderschöni Tracebacks](https://rich.readthedocs.io/en/latest/traceback.html) generiäre wo eifach zum läse sind und meh Code als de standart Python Traceback darstellt. Du chasch Rich als default Traceback Handler setzä ond alli nöd abfangene Exceptions werded mit Rich dargstellt.
+Rich cha [wunderschöni Tracebacks](https://rich.readthedocs.io/en/latest/traceback.html) generiäre wo eifach zum läse sind und meh Code als de Standard-Python-Traceback darstellt. Du chasch Rich als default Traceback Handler setzä ond alli nöd abfangene Exceptions werded mit Rich dargstellt.
 
 So gsiets ungefär ufemen OSX (ähnloch uf Linux) us:
 
-![traceback](https://github.com/willmcgugan/rich/raw/master/imgs/traceback.png)
+![traceback](https://github.com/textualize/rich/raw/master/imgs/traceback.png)
 
 </details>
 
-Alli Rich Renderables bruched s [Console Protokoll](https://rich.readthedocs.io/en/latest/protocol.html), wo mo au für d eige entwicklig vo Rich Inhalt cha bruche.
+Alli Rich Renderables bruched s [Console-Protokoll](https://rich.readthedocs.io/en/latest/protocol.html), wo mo au für d eige Entwicklig vo Rich-Inhalt cha bruche.
 
 # Rich für Ondernemä
 
@@ -449,6 +454,6 @@ Do es paar Projekt wo Rich verwended:
   Lightweight Python library for adding real-time 2D object tracking to any detector.
 - [ansible/ansible-lint](https://github.com/ansible/ansible-lint) Ansible-lint checks playbooks for practices and behaviour that could potentially be improved
 - [ansible-community/molecule](https://github.com/ansible-community/molecule) Ansible Molecule testing framework
-- +[Many more](https://github.com/willmcgugan/rich/network/dependents)!
+- +[Vieli meh](https://github.com/textualize/rich/network/dependents)!
 
 <!-- This is a test, no need to translate -->

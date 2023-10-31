@@ -5,11 +5,424 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [13.3.1] - 2023-01-28
+
+### Fixed
+
+- Fixed truecolor to eight bit color conversion https://github.com/Textualize/rich/pull/2785
+
+## [13.3.0] - 2023-01-27
+
+### Fixed
+
+- Fixed failing tests due to Pygments dependency https://github.com/Textualize/rich/issues/2757
+- Relaxed ipywidgets https://github.com/Textualize/rich/issues/2767
+
+### Added 
+
+- Added `encoding` parameter in `Theme.read`
+
+
+## [13.2.0] - 2023-01-19
+
+### Changed
+
+- Switch Markdown parsing from commonmark to markdown-it-py https://github.com/Textualize/rich/pull/2439
+
+## [13.1.0] - 2023-01-14
+
+### Fixed
+
+- Fixed wrong filenames in Jupyter tracebacks https://github.com/Textualize/rich/issues/2271
+
+### Added
+
+- Added locals_hide_dunder and locals_hide_sunder to Tracebacks, to hide double underscore and single underscore locals. https://github.com/Textualize/rich/pull/2754
+
+### Changed
+
+- Tracebacks will now hide double underscore names from locals by default. Set `locals_hide_dunder=False` to restore previous behaviour.
+
+## [13.0.1] - 2023-01-06
+
+### Fixed
+
+- Fixed issue with Segment.split_cells for mixed single and double cell widths
+
+## [13.0.0] - 2022-12-30
+
+### Fixed
+
+- Reversed `pre` and `code` tags in base HTML format https://github.com/Textualize/rich/pull/2642
+- Improved detection of `attrs` library, that isn't confused by the presence of the `attr` library.
+- Fixed issue with `locals_max_length` parameter not being respected in Traceback https://github.com/Textualize/rich/issues/2649
+- Handling of broken `fileno` made more robust. Fixes https://github.com/Textualize/rich/issues/2645
+- Fixed missing `fileno` on FileProxy
+
+### Changed
+
+- Bumped minimum Python version to 3.7 https://github.com/Textualize/rich/pull/2567
+- Pretty-printing of "tagged" `__repr__` results is now greedy when matching tags https://github.com/Textualize/rich/pull/2565
+- `progress.track` now supports deriving total from `__length_hint__`
+
+### Added
+
+- Add type annotation for key_separator of pretty.Node https://github.com/Textualize/rich/issues/2625
+
+
+## [12.6.0] - 2022-10-02
+
+### Added
+
+- Parse ANSI escape sequences in pretty repr https://github.com/Textualize/rich/pull/2470
+- Add support for `FORCE_COLOR` env var https://github.com/Textualize/rich/pull/2449
+- Allow a `max_depth` argument to be passed to the `install()` hook https://github.com/Textualize/rich/issues/2486
+- Document using `None` as name in `__rich_repr__` for tuple positional args https://github.com/Textualize/rich/pull/2379
+- Add `font_aspect_ratio` parameter in SVG export https://github.com/Textualize/rich/pull/2539/files
+- Added `Table.add_section` method. https://github.com/Textualize/rich/pull/2544
+
+### Fixed
+
+- Handle stdout/stderr being null https://github.com/Textualize/rich/pull/2513
+- Fix NO_COLOR support on legacy Windows https://github.com/Textualize/rich/pull/2458
+- Fix pretty printer handling of cyclic references https://github.com/Textualize/rich/pull/2524
+- Fix missing `mode` property on file wrapper breaking uploads via `requests` https://github.com/Textualize/rich/pull/2495
+- Fix mismatching default value of parameter `ensure_ascii` https://github.com/Textualize/rich/pull/2538
+- Remove unused height parameter in `Layout` class https://github.com/Textualize/rich/pull/2540
+- Fixed exception in Syntax.__rich_measure__ for empty files
+
+### Changed
+
+- Removed border from code blocks in Markdown
+
+## [12.5.2] - 2022-07-18
+
+### Added
+
+- Add Turkish Readme.
+
+## [12.5.1] - 2022-07-11
+
+### Fixed
+
+- Fixed missing typing extensions dependency on 3.9 https://github.com/Textualize/rich/issues/2386
+- Fixed Databricks Notebook is not detected as Jupyter environment. https://github.com/Textualize/rich/issues/2422
+
+## [12.5.0] - 2022-07-11
+
+### Added
+
+- Environment variables `JUPYTER_COLUMNS` and `JUPYTER_LINES` to control width and height of console in Jupyter
+- Markdown friendly `Box` style, `MARKDOWN`, for rendering tables ready to copy into markdown files
+- `inspect` will prefix coroutine functions with `async def`
+- `Style.__add__` will no longer return `NotImplemented`
+- Remove rich.\_lru_cache
+
+### Changed
+
+- Default width of Jupyter console size is increased to 115
+- Optimized Segment.divide
+
+### Fixed
+
+- Fix Rich clobbering cursor style on Windows https://github.com/Textualize/rich/pull/2339
+- Fix text wrapping edge case https://github.com/Textualize/rich/pull/2296
+- Allow exceptions that are raised while a Live is rendered to be displayed and/or processed https://github.com/Textualize/rich/pull/2305
+- Fix crashes that can happen with `inspect` when docstrings contain some special control codes https://github.com/Textualize/rich/pull/2294
+- Fix edges used in first row of tables when `show_header=False` https://github.com/Textualize/rich/pull/2330
+- Fix interaction between `Capture` contexts and `Console(record=True)` https://github.com/Textualize/rich/pull/2343
+- Fixed hash issue in Styles class https://github.com/Textualize/rich/pull/2346
+- Fixed bug in `Segment.split_and_crop_lines`
+
+## [12.4.4] - 2022-05-24
+
+### Changed
+
+- Added clipping per line to SVG output to avoid box characters overlapping
+- Optimized SVG output
+
+## [12.4.3] - 2022-05-23
+
+### Changed
+
+- Further tweaks to SVG character matrix
+- Added clip rect to SVG to prevent box characters overlapping bottom of terminal
+
+## [12.4.2] - 2022-05-23
+
+### Fixed
+
+- Fix for SVG on Firefox
+
+### Changed
+
+- Removed excess margin from SVG, tweaked cell sizes to better render block characters
+
+## [12.4.1] - 2022-05-08
+
+### Fixed
+
+- Fix for default background color in SVG export https://github.com/Textualize/rich/issues/2260
+
+### Changed
+
+- Added a keyline around SVG terminals which is visible on dark backgrounds
+
+### Changed
+
+- Added a keyline around SVG terminals which is visible on dark backgrounds
+
+## [12.4.0] - 2022-05-07
+
+### Changed
+
+- Rebuilt SVG export to create a simpler SVG that is more portable
+- Fix render_lines crash when render height was negative https://github.com/Textualize/rich/pull/2246
+- Make objects from `rich.progress.open` forward the name of the internal handle https://github.com/Textualize/rich/pull/2254
+
+### Added
+
+- Add `padding` to Syntax constructor https://github.com/Textualize/rich/pull/2247
+
+## [12.3.0] - 2022-04-26
+
+### Added
+
+- Ability to change terminal window title https://github.com/Textualize/rich/pull/2200
+- Added show_speed parameter to progress.track which will show the speed when the total is not known
+- Python blocks can now opt out from being rendered in tracebacks's frames, by setting a `_rich_traceback_omit = True` in their local scope https://github.com/Textualize/rich/issues/2207
+
+### Fixed
+
+- Fall back to `sys.__stderr__` on POSIX systems when trying to get the terminal size (fix issues when Rich is piped to another process)
+- Fixed markup escaping issue https://github.com/Textualize/rich/issues/2187
+- Safari - Box appearing around SVG export https://github.com/Textualize/rich/pull/2201
+- Fixed recursion error in Jupyter progress bars https://github.com/Textualize/rich/issues/2047
+- Complex numbers are now identified by the highlighter https://github.com/Textualize/rich/issues/2214
+- Fix crash on IDLE and forced is_terminal detection to False because IDLE can't do escape codes https://github.com/Textualize/rich/issues/2222
+- Fixed missing blank line in traceback rendering https://github.com/Textualize/rich/issues/2206
+- Fixed running Rich with the current working dir was deleted https://github.com/Textualize/rich/issues/2197
+
+### Changed
+
+- Setting `total=None` on progress is now possible, and will display pulsing animation
+- Micro-optimization for Segment.divide
+
+## [12.2.0] - 2022-04-05
+
+### Changed
+
+- Bumped typing-extensions minimum to 4.0.0
+- Bumped minimum Python version to 3.6.3
+
+## [12.1.0] - 2022-04-03
+
+### Added
+
+- Progress.open and Progress.wrap_file method to track the progress while reading from a file or file-like object https://github.com/textualize/rich/pull/1759
+- SVG export functionality https://github.com/Textualize/rich/pull/2101
+- Adding Indonesian translation
+
+### Fixed
+
+- Add missing `end` keyword argument to `Text.from_markup` https://github.com/Textualize/rich/pull/2095
+- Fallback to text lexer when no lexer guessed https://github.com/Textualize/rich/pull/2133
+- Fixed issue with decoding ANSI reset https://github.com/Textualize/rich/issues/2112
+
+## [12.0.1] - 2022-03-22
+
+### Changed
+
+- Improve performance of cell_length https://github.com/Textualize/rich/pull/2061
+- Improve performance of chop_cells https://github.com/Textualize/rich/pull/2077
+
+### Fixed
+
+- Fix capturing stdout on legacy Windows https://github.com/Textualize/rich/pull/2066
+
+## [12.0.0] - 2022-03-10
+
+### Added
+
+- Added options to TimeRemainingColumn to render a compact time format and render elapsed time when a task is
+  finished. https://github.com/Textualize/rich/pull/1992
+- Added ProgressColumn `MofNCompleteColumn` to display raw `completed/total` column (similar to DownloadColumn,
+  but displays values as ints, does not convert to floats or add bit/bytes units).
+  https://github.com/Textualize/rich/pull/1941
+- Replace Colorama with win32 renderer https://github.com/Textualize/rich/pull/1993
+- Add support for namedtuples to `Pretty` https://github.com/Textualize/rich/pull/2031
+
+### Fixed
+
+- In Jupyter mode make the link target be set to "\_blank"
+- Fix some issues with markup handling around "[" characters https://github.com/Textualize/rich/pull/1950
+- Fix syntax lexer guessing.
+- Fixed Pretty measure not respecting expand_all https://github.com/Textualize/rich/issues/1998
+- Collapsed definitions for single-character spinners, to save memory and reduce import time.
+- Fix print_json indent type in `__init__.py`
+- Fix error when inspecting object defined in REPL https://github.com/Textualize/rich/pull/2037
+- Fix incorrect highlighting of non-indented JSON https://github.com/Textualize/rich/pull/2038
+- Fixed height reset in complex renderables https://github.com/Textualize/rich/issues/2042
+
+### Changed
+
+- Improved support for enum.Flag in ReprHighlighter https://github.com/Textualize/rich/pull/1920
+- Tree now respects justify=None, i.e. won't pad to right https://github.com/Textualize/rich/issues/1690
+- Removed rich.tabulate which was marked for deprecation
+- Deprecated rich.align.AlignValues in favor of AlignMethod
+
+## [11.2.0] - 2022-02-08
+
+### Added
+
+- Add support for US spelling of "gray" in ANSI color names https://github.com/Textualize/rich/issues/1890
+- Added `rich.diagnose.report` to expose environment debugging logic as function https://github.com/Textualize/rich/pull/1917
+- Added classmethod `Progress.get_default_columns()` to get the default list of progress bar columns https://github.com/Textualize/rich/pull/1894
+
+### Fixed
+
+- Fixed performance issue in measuring text
+
+### Fixed
+
+- Fixed test failures on PyPy3 https://github.com/Textualize/rich/pull/1904
+
+## [11.1.0] - 2022-01-28
+
+### Added
+
+- Workaround for edge case of object from Faiss with no `__class__` https://github.com/Textualize/rich/issues/1838
+- Add Traditional Chinese readme
+- Add `Syntax.guess_lexer`, add support for more lexers (e.g. Django templates etc.) https://github.com/Textualize/rich/pull/1869
+- Add `lexer` parameter to `Syntax.from_path` to allow for overrides https://github.com/Textualize/rich/pull/1873
+
+### Fixed
+
+- Workaround for edge case of object from Faiss with no `__class__` https://github.com/Textualize/rich/issues/1838
+- Ensure `Syntax` always justifies left https://github.com/Textualize/rich/pull/1872
+- Handle classes in inspect when methods=True https://github.com/Textualize/rich/pull/1874
+
+## [11.0.0] - 2022-01-09
+
+### Added
+
+- Added max_depth arg to pretty printing https://github.com/Textualize/rich/issues/1585
+- Added `vertical_align` to Table.add_row https://github.com/Textualize/rich/issues/1590
+
+### Fixed
+
+- Fixed issue with pretty repr in jupyter notebook https://github.com/Textualize/rich/issues/1717
+- Fix Traceback theme defaults override user supplied styles https://github.com/Textualize/rich/issues/1786
+
+### Changed
+
+- **breaking** Deprecated rich.console.RenderGroup, now named rich.console.Group
+- **breaking** `Syntax.__init__` parameter `lexer_name` renamed to `lexer`
+- Syntax constructor accepts both str and now a pygments lexer https://github.com/Textualize/rich/pull/1748
+
+## [10.16.2] - 2021-01-02
+
+### Fixed
+
+- Fixed @ not being escaped in markup
+
+## [10.16.1] - 2021-12-15
+
+### Fixed
+
+- Fixed issues with overlapping tags https://github.com/textualize/rich/issues/1755
+
+## [10.16.0] - 2021-12-12
+
+### Fixed
+
+- Double print of progress bar in Jupyter https://github.com/textualize/rich/issues/1737
+
+### Added
+
+- Added Text.markup property https://github.com/textualize/rich/issues/1751
+
+## [10.15.2] - 2021-12-02
+
+### Fixed
+
+- Deadlock issue https://github.com/textualize/rich/issues/1734
+
+## [10.15.1] - 2021-11-29
+
+### Fixed
+
+- Reverted thread-safety fix for Live that introduced deadlock potential
+
+## [10.15.0] - 2021-11-28
+
+### Added
+
+- Added dynamic_progress.py to examples
+- Added ConsoleOptions.update_height
+- Fixed Padding not respecting height
+
+### Changed
+
+- Some optimizations for simple strings (with only single cell widths)
+
+### Fixed
+
+- Fixed issue with progress bar not rendering markup https://github.com/textualize/rich/issues/1721
+- Fixed race condition when exiting Live https://github.com/textualize/rich/issues/1530
+
+## [10.14.0] - 2021-11-16
+
+### Fixed
+
+- Fixed progress speed not updating when total doesn't change
+- Fixed superfluous new line in Status https://github.com/textualize/rich/issues/1662
+- Fixed Windows legacy width again
+- Fixed infinite loop in set_cell_size https://github.com/textualize/rich/issues/1682
+
+### Added
+
+- Added file protocol to URL highlighter https://github.com/textualize/rich/issues/1681
+- Added rich.protocol.rich_cast
+
+### Changed
+
+- Allowed `__rich__` to work recursively
+- Allowed Text classes to work with sep in print https://github.com/textualize/rich/issues/1689
+
+### Added
+
+- Added a `rich.text.Text.from_ansi` helper method for handling pre-formatted input strings https://github.com/textualize/rich/issues/1670
+
+## [10.13.0] - 2021-11-07
+
+### Added
+
+- Added json.dumps parameters to print_json https://github.com/textualize/rich/issues/1638
+
+### Fixed
+
+- Fixed an edge case bug when console module try to detect if they are in a tty at the end of a pytest run
+- Fixed a bug where logging handler raises an exception when running with pythonw (related to https://bugs.python.org/issue13807)
+- Fixed issue with TERM env vars that have more than one hyphen https://github.com/textualize/rich/issues/1640
+- Fixed missing new line after progress bar when terminal is not interactive https://github.com/textualize/rich/issues/1606
+- Fixed exception in IPython when disabling pprint with %pprint https://github.com/textualize/rich/issues/1646
+- Fixed issue where values longer than the console width produced invalid JSON https://github.com/textualize/rich/issues/1653
+- Fixes trailing comma when pretty printing dataclass with last field repr=False https://github.com/textualize/rich/issues/1599
+
+## Changed
+
+- Markdown codeblocks now word-wrap https://github.com/textualize/rich/issues/1515
+
 ## [10.12.0] - 2021-10-06
 
 ### Updated
 
 - Official Py3.10 release
+
+### Fixed
+
+- Fixed detection of custom repr when pretty printing dataclasses
 
 ## [10.11.0] - 2021-09-24
 
@@ -26,7 +439,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed pretty printing of objects with fo magic with **getattr** https://github.com/willmcgugan/rich/issues/1492
+- Fixed pretty printing of objects with fo magic with **getattr** https://github.com/textualize/rich/issues/1492
 
 ## [10.9.0] - 2021-08-29
 
@@ -52,7 +465,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed a bug where calling `rich.reconfigure` within a `pytest_configure` hook would lead to a crash
-- Fixed highlight not being passed through options https://github.com/willmcgugan/rich/issues/1404
+- Fixed highlight not being passed through options https://github.com/textualize/rich/issues/1404
 
 ## [10.7.0] - 2021-08-05
 
@@ -86,7 +499,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed issue with adjoining color tags https://github.com/willmcgugan/rich/issues/1334
+- Fixed issue with adjoining color tags https://github.com/textualize/rich/issues/1334
 
 ### Changed
 
@@ -96,10 +509,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed Pandas objects not pretty printing https://github.com/willmcgugan/rich/issues/1305
-- Fixed https://github.com/willmcgugan/rich/issues/1256
+- Fixed Pandas objects not pretty printing https://github.com/textualize/rich/issues/1305
+- Fixed https://github.com/textualize/rich/issues/1256
 - Fixed typing with rich.repr.auto decorator
-- Fixed repr error formatting https://github.com/willmcgugan/rich/issues/1326
+- Fixed repr error formatting https://github.com/textualize/rich/issues/1326
 
 ### Added
 
@@ -137,13 +550,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed status not rendering console markup https://github.com/willmcgugan/rich/issues/1244
+- Fixed status not rendering console markup https://github.com/textualize/rich/issues/1244
 
 ## [10.2.1] - 2021-05-17
 
 ### Fixed
 
-- Fixed panel in Markdown exploding https://github.com/willmcgugan/rich/issues/1234
+- Fixed panel in Markdown exploding https://github.com/textualize/rich/issues/1234
 
 ## [10.2.0] - 2021-05-12
 
@@ -162,7 +575,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed initial blank lines removed from Syntax https://github.com/willmcgugan/rich/issues/1214
+- Fixed initial blank lines removed from Syntax https://github.com/textualize/rich/issues/1214
 
 ## [10.1.0] - 2021-04-03
 
@@ -174,13 +587,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed race condition that duplicated lines in progress https://github.com/willmcgugan/rich/issues/1144
+- Fixed race condition that duplicated lines in progress https://github.com/textualize/rich/issues/1144
 
 ## [10.0.0] - 2021-03-27
 
 ### Changed
 
-- Made pydoc import lazy as at least one use found it slow to import https://github.com/willmcgugan/rich/issues/1104
+- Made pydoc import lazy as at least one use found it slow to import https://github.com/textualize/rich/issues/1104
 - Modified string highlighting to not match in the middle of a word, so that apostrophes are not considered strings
 - New way of encoding control codes in Segment
 - New signature for Control class
@@ -204,10 +617,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed table style taking precedence over row style https://github.com/willmcgugan/rich/issues/1129
-- Fixed incorrect measurement of Text with new lines and whitespace https://github.com/willmcgugan/rich/issues/1133
+- Fixed table style taking precedence over row style https://github.com/textualize/rich/issues/1129
+- Fixed incorrect measurement of Text with new lines and whitespace https://github.com/textualize/rich/issues/1133
 - Made type annotations consistent for various `total` keyword arguments in `rich.progress` and rich.`progress_bar`
-- Disabled Progress no longer displays itself when starting https://github.com/willmcgugan/rich/pull/1125
+- Disabled Progress no longer displays itself when starting https://github.com/textualize/rich/pull/1125
 - Animations no longer reset when updating rich.status.Status
 
 ## [9.13.0] - 2021-03-06
@@ -218,8 +631,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed Syntax background https://github.com/willmcgugan/rich/issues/1088
-- Fix for double tracebacks when no formatter https://github.com/willmcgugan/rich/issues/1079
+- Fixed Syntax background https://github.com/textualize/rich/issues/1088
+- Fix for double tracebacks when no formatter https://github.com/textualize/rich/issues/1079
 
 ### Changed
 
@@ -229,7 +642,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed custom formatters with rich tracebacks in RichHandler https://github.com/willmcgugan/rich/issues/1079
+- Fixed custom formatters with rich tracebacks in RichHandler https://github.com/textualize/rich/issues/1079
 
 ### Changed
 
@@ -254,9 +667,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [9.12.1] - 2021-02-27
 
-### Fixed
+### Fixed
 
-- Fixed deadlock in Progress https://github.com/willmcgugan/rich/issues/1061
+- Fixed deadlock in Progress https://github.com/textualize/rich/issues/1061
 
 ### Added
 
@@ -272,14 +685,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed issue with Syntax and missing lines in Layout https://github.com/willmcgugan/rich/issues/1050
-- Fixed issue with nested markdown elements https://github.com/willmcgugan/rich/issues/1036
-- Fixed new lines not invoking render hooks https://github.com/willmcgugan/rich/issues/1052
-- Fixed Align setting height to child https://github.com/willmcgugan/rich/issues/1057
+- Fixed issue with Syntax and missing lines in Layout https://github.com/textualize/rich/issues/1050
+- Fixed issue with nested markdown elements https://github.com/textualize/rich/issues/1036
+- Fixed new lines not invoking render hooks https://github.com/textualize/rich/issues/1052
+- Fixed Align setting height to child https://github.com/textualize/rich/issues/1057
 
 ### Changed
 
-- Printing a table with no columns now result in a blank line https://github.com/willmcgugan/rich/issues/1044
+- Printing a table with no columns now result in a blank line https://github.com/textualize/rich/issues/1044
 
 ### Added
 
@@ -291,9 +704,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed table with expand=False not expanding when justify="center"
 - Fixed single renderable in Layout not respecting height
-- Fixed COLUMNS and LINES env var https://github.com/willmcgugan/rich/issues/1019
+- Fixed COLUMNS and LINES env var https://github.com/textualize/rich/issues/1019
 - Layout now respects minimum_size when fixes sizes are greater than available space
-- HTML export now changes link underline score to match terminal https://github.com/willmcgugan/rich/issues/1009
+- HTML export now changes link underline score to match terminal https://github.com/textualize/rich/issues/1009
 
 ### Changed
 
@@ -308,10 +721,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed error message for tracebacks with broken `__str__` https://github.com/willmcgugan/rich/issues/980
-- Fixed markup edge case https://github.com/willmcgugan/rich/issues/987
+- Fixed error message for tracebacks with broken `__str__` https://github.com/textualize/rich/issues/980
+- Fixed markup edge case https://github.com/textualize/rich/issues/987
 
-### Added
+### Added
 
 - Added cheeky sponsorship request to test card
 - Added `quiet` argument to Console constructor
@@ -350,7 +763,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix double line tree guides on Windows
 - Fixed Tracebacks ignoring initial blank lines
 - Partial fix for tracebacks not finding source after chdir
-- Fixed error message when code in tracebacks doesn't have an extension https://github.com/willmcgugan/rich/issues/996
+- Fixed error message when code in tracebacks doesn't have an extension https://github.com/textualize/rich/issues/996
 
 ### Added
 
@@ -360,17 +773,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed deadlock in live https://github.com/willmcgugan/rich/issues/927
+- Fixed deadlock in live https://github.com/textualize/rich/issues/927
 
 ## [9.8.1] - 2021-01-13
 
 ### Fixed
 
-- Fixed rich.inspect failing with attributes that claim to be callable but aren't https://github.com/willmcgugan/rich/issues/916
+- Fixed rich.inspect failing with attributes that claim to be callable but aren't https://github.com/textualize/rich/issues/916
 
 ## [9.8.0] - 2021-01-11
 
-### Added
+### Added
 
 - Added **rich_measure** for tree
 - Added rich.align.VerticalCenter
@@ -385,7 +798,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed panel cropping when shrunk too bar
 - Allow passing markdown over STDIN when using `python -m rich.markdown`
-- Fix printing MagicMock.mock_calls https://github.com/willmcgugan/rich/issues/903
+- Fix printing MagicMock.mock_calls https://github.com/textualize/rich/issues/903
 
 ## [9.7.0] - 2021-01-09
 
@@ -398,9 +811,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed markup escaping edge case https://github.com/willmcgugan/rich/issues/878
+- Fixed markup escaping edge case https://github.com/textualize/rich/issues/878
 - Double tag escape, i.e. `"\\[foo]"` results in a backslash plus `[foo]` tag
-- Fixed header_style not applying to headers in positional args https://github.com/willmcgugan/rich/issues/953
+- Fixed header_style not applying to headers in positional args https://github.com/textualize/rich/issues/953
 
 ## [9.6.1] - 2020-12-31
 
@@ -429,7 +842,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed terminal size detection on Windows https://github.com/willmcgugan/rich/issues/836
+- Fixed terminal size detection on Windows https://github.com/textualize/rich/issues/836
 - Fixed hex number highlighting
 
 ## [9.5.0] - 2020-12-18
@@ -453,33 +866,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed double output in rich.live https://github.com/willmcgugan/rich/issues/485
-- Fixed Console.out highlighting not reflecting defaults https://github.com/willmcgugan/rich/issues/827
-- FileProxy now raises TypeError for empty non-str arguments https://github.com/willmcgugan/rich/issues/828
+- Fixed double output in rich.live https://github.com/textualize/rich/issues/485
+- Fixed Console.out highlighting not reflecting defaults https://github.com/textualize/rich/issues/827
+- FileProxy now raises TypeError for empty non-str arguments https://github.com/textualize/rich/issues/828
 
 ## [9.4.0] - 2020-12-12
 
-### Added
+### Added
 
-- Added rich.live https://github.com/willmcgugan/rich/pull/382
+- Added rich.live https://github.com/textualize/rich/pull/382
 - Added algin parameter to Rule and Console.rule
 - Added rich.Status class and Console.status
 - Added getitem to Text
 - Added style parameter to Console.log
 - Added rich.diagnose command
 
-### Changed
+### Changed
 
 - Table.add_row style argument now applies to entire line and not just cells
 - Added end_section parameter to Table.add_row to force a line underneath row
 
 ## Fixed
 
-- Fixed suppressed traceback context https://github.com/willmcgugan/rich/issues/468
+- Fixed suppressed traceback context https://github.com/textualize/rich/issues/468
 
 ## [9.3.0] - 2020-12-1
 
-### Added
+### Added
 
 - Added get_datetime parameter to Console, to allow for repeatable tests
 - Added get_time parameter to Console
@@ -496,9 +909,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed redirecting of stderr in Progress
-- Fixed broken expanded tuple of one https://github.com/willmcgugan/rich/issues/445
+- Fixed broken expanded tuple of one https://github.com/textualize/rich/issues/445
 - Fixed traceback message with `from` exceptions
-- Fixed justify argument not working in console.log https://github.com/willmcgugan/rich/issues/460
+- Fixed justify argument not working in console.log https://github.com/textualize/rich/issues/460
 
 ## [9.2.0] - 2020-11-08
 
@@ -535,13 +948,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed negative time remaining in Progress bars https://github.com/willmcgugan/rich/issues/378
+- Fixed negative time remaining in Progress bars https://github.com/textualize/rich/issues/378
 
 ## [9.0.1] - 2020-10-19
 
 ### Fixed
 
-- Fixed broken ANSI codes in input on windows legacy https://github.com/willmcgugan/rich/issues/393
+- Fixed broken ANSI codes in input on windows legacy https://github.com/textualize/rich/issues/393
 
 ## [9.0.0] - 2020-10-18
 
@@ -561,15 +974,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added binary_units in progress download column
 - Added Progress.reset
 - Added Style.background_style property
-- Added Bar renderable https://github.com/willmcgugan/rich/pull/361
+- Added Bar renderable https://github.com/textualize/rich/pull/361
 - Added Table.min_width
 - Added table.Column.min_width and table.Column.max_width, and same to Table.add_column
 
 ### Changed
 
 - Dropped box.get_safe_box function in favor of Box.substitute
-- Changed default padding in Panel from 0 to (0, 1) https://github.com/willmcgugan/rich/issues/385
-- Table with row_styles will extend background color between cells if the box has no vertical dividerhttps://github.com/willmcgugan/rich/issues/383
+- Changed default padding in Panel from 0 to (0, 1) https://github.com/textualize/rich/issues/385
+- Table with row_styles will extend background color between cells if the box has no vertical dividerhttps://github.com/textualize/rich/issues/383
 - Changed default of fit kwarg in render_group() from False to True
 - Renamed rich.bar to rich.progress_bar, and Bar class to ProgressBar, rich.bar is now the new solid bar class
 
@@ -579,7 +992,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [8.0.0] - 2020-10-03
 
-### Added
+### Added
 
 - Added Console.bell method
 - Added Set to types that Console.print will automatically pretty print
@@ -602,9 +1015,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added Console.begin_capture, Console.end_capture and Console.capture
-- Added Table.title_justify and Table.caption_justify https://github.com/willmcgugan/rich/issues/301
+- Added Table.title_justify and Table.caption_justify https://github.com/textualize/rich/issues/301
 
-### Changed
+### Changed
 
 - Improved formatting of exceptions
 - Enabled Rich exceptions in logging https://github.com/taliraj
@@ -623,7 +1036,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Text.remove_suffix
 - Added Text.append_tokens
 
-### Changed
+### Changed
 
 - Text.tabs_to_spaces was renamed to Text.expand_tabs, which works in place rather than returning a new instance
 - Renamed Column.index to Column.\_index
@@ -693,7 +1106,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed underscore with display hook https://github.com/willmcgugan/rich/issues/235
+- Fixed underscore with display hook https://github.com/textualize/rich/issues/235
 
 ## [5.2.0] - 2020-08-14
 
@@ -701,7 +1114,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added crop argument to Console.print
 - Added "ignore" overflow method
-- Added multiple characters per rule @hedythedev https://github.com/willmcgugan/rich/pull/207
+- Added multiple characters per rule @hedythedev https://github.com/textualize/rich/pull/207
 
 ## [5.1.2] - 2020-08-10
 
@@ -720,12 +1133,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added Text.cell_len
-- Added helpful message regarding unicode decoding errors https://github.com/willmcgugan/rich/issues/212
+- Added helpful message regarding unicode decoding errors https://github.com/textualize/rich/issues/212
 - Added display hook with pretty.install()
 
 ### Fixed
 
-- Fixed deprecation warnings re backslash https://github.com/willmcgugan/rich/issues/210
+- Fixed deprecation warnings re backslash https://github.com/textualize/rich/issues/210
 - Fixed repr highlighting of scientific notation, e.g. 1e100
 
 ### Changed
@@ -752,24 +1165,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added show_time and show_level parameters to RichHandler https://github.com/willmcgugan/rich/pull/182
+- Added show_time and show_level parameters to RichHandler https://github.com/textualize/rich/pull/182
 
 ### Fixed
 
-- Fixed progress.track iterator exiting early https://github.com/willmcgugan/rich/issues/189
-- Added workaround for Python bug https://bugs.python.org/issue37871, fixing https://github.com/willmcgugan/rich/issues/186
+- Fixed progress.track iterator exiting early https://github.com/textualize/rich/issues/189
+- Added workaround for Python bug https://bugs.python.org/issue37871, fixing https://github.com/textualize/rich/issues/186
 
 ### Changed
 
-- Set overflow=fold for log messages https://github.com/willmcgugan/rich/issues/190
+- Set overflow=fold for log messages https://github.com/textualize/rich/issues/190
 
 ## [4.2.0] - 2020-07-27
 
 ### Fixed
 
-- Fixed missing new lines https://github.com/willmcgugan/rich/issues/178
-- Fixed Progress.track https://github.com/willmcgugan/rich/issues/184
-- Remove control codes from exported text https://github.com/willmcgugan/rich/issues/181
+- Fixed missing new lines https://github.com/textualize/rich/issues/178
+- Fixed Progress.track https://github.com/textualize/rich/issues/184
+- Remove control codes from exported text https://github.com/textualize/rich/issues/181
 - Implemented auto-detection and color rendition of 16-color mode
 
 ## [4.1.0] - 2020-07-26
@@ -785,7 +1198,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ### Added
 
-- Added markup switch to RichHandler https://github.com/willmcgugan/rich/issues/171
+- Added markup switch to RichHandler https://github.com/textualize/rich/issues/171
 
 ### Changed
 
@@ -794,7 +1207,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ### Fixed
 
-- Fixed rendering of Confirm prompt https://github.com/willmcgugan/rich/issues/170
+- Fixed rendering of Confirm prompt https://github.com/textualize/rich/issues/170
 
 ## [3.4.1] - 2020-07-22
 
@@ -889,7 +1302,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ### Changed
 
-- More precise detection of Windows console https://github.com/willmcgugan/rich/issues/140
+- More precise detection of Windows console https://github.com/textualize/rich/issues/140
 
 ## [3.0.3] - 2020-07-03
 
@@ -907,7 +1320,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ## [3.0.2] - 2020-07-02
 
-### Added
+### Added
 
 - Added rich.styled.Styled class to apply styles to renderable
 - Table.add_row now has an optional style parameter
@@ -946,7 +1359,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ### Fixed
 
-- Disabled legacy_windows if jupyter is detected https://github.com/willmcgugan/rich/issues/125
+- Disabled legacy_windows if jupyter is detected https://github.com/textualize/rich/issues/125
 
 ## [2.3.0] - 2020-06-26
 
@@ -967,13 +1380,13 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ### Changed
 
-- Store a "link id" on Style instance, so links containing different styles are highlighted together. (https://github.com/willmcgugan/rich/pull/123)
+- Store a "link id" on Style instance, so links containing different styles are highlighted together. (https://github.com/textualize/rich/pull/123)
 
 ## [2.2.5] - 2020-06-23
 
 ### Fixed
 
-- Fixed justify of tables (https://github.com/willmcgugan/rich/issues/117)
+- Fixed justify of tables (https://github.com/textualize/rich/issues/117)
 
 ## [2.2.4] - 2020-06-21
 
@@ -1020,7 +1433,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 - Added 'transient' option to Progress
 
-### Changed
+### Changed
 
 - Truncated overly long text in Rule with ellipsis overflow
 
@@ -1101,7 +1514,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ### Fixed
 
-- Fixed Progress deadlock https://github.com/willmcgugan/rich/issues/90
+- Fixed Progress deadlock https://github.com/textualize/rich/issues/90
 
 ### Changed
 
@@ -1142,7 +1555,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 - Optimizations for Segment, Console and Table
 
-### Added
+### Added
 
 - Added Console.clear method
 - Added exporting of links to HTML
@@ -1164,7 +1577,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ## [1.1.6] - 2020-05-17
 
-### Added
+### Added
 
 - Added rich.align.Align class
 - Added justify argument to Console.print and console.log
@@ -1183,7 +1596,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 - Fixes for legacy windows: Bar, Panel, and Rule now use ASCII characters
 - show_cursor is now a no-op on legacy windows
 
-### Added
+### Added
 
 - Added Console.input
 
@@ -1232,7 +1645,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ### Fixed
 
-- Issue with Windows legacy support https://github.com/willmcgugan/rich/issues/59
+- Issue with Windows legacy support https://github.com/textualize/rich/issues/59
 
 ## [1.0.1] - 2020-05-08
 
@@ -1254,7 +1667,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ### Fixed
 
-- Fixed Text.assemble not working with strings https://github.com/willmcgugan/rich/issues/57
+- Fixed Text.assemble not working with strings https://github.com/textualize/rich/issues/57
 - Fixed table when column widths must be compressed to fit
 
 ## [1.0.0] - 2020-05-03
@@ -1445,7 +1858,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 ### Fixed
 
-- Readme links in Pypi
+- Readme links in PyPI
 
 ## [0.4.0] - 2020-02-22
 
@@ -1464,7 +1877,7 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 ### Fixed
 
 - Fixed Windows color support
-- Fixed line width on windows issue (https://github.com/willmcgugan/rich/issues/7)
+- Fixed line width on windows issue (https://github.com/textualize/rich/issues/7)
 - Fixed Pretty print on Windows
 
 ## [0.3.2] - 2020-01-26
@@ -1484,3 +1897,165 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 ### Added
 
 - First official release, API still to be stabilized
+
+[13.3.1]: https://github.com/textualize/rich/compare/v13.3.0...v13.3.1
+[13.3.0]: https://github.com/textualize/rich/compare/v13.2.0...v13.3.0
+[13.2.0]: https://github.com/textualize/rich/compare/v13.1.0...v13.2.0
+[13.1.0]: https://github.com/textualize/rich/compare/v13.0.1...v13.1.0
+[13.0.1]: https://github.com/textualize/rich/compare/v13.0.0...v13.0.1
+[13.0.0]: https://github.com/textualize/rich/compare/v12.6.0...v13.0.0
+[12.6.0]: https://github.com/textualize/rich/compare/v12.5.2...v12.6.0
+[12.5.2]: https://github.com/textualize/rich/compare/v12.5.1...v12.5.2
+[12.5.1]: https://github.com/textualize/rich/compare/v12.5.0...v12.5.1
+[12.5.0]: https://github.com/textualize/rich/compare/v12.4.4...v12.5.0
+[12.4.4]: https://github.com/textualize/rich/compare/v12.4.3...v12.4.4
+[12.4.3]: https://github.com/textualize/rich/compare/v12.4.2...v12.4.3
+[12.4.2]: https://github.com/textualize/rich/compare/v12.4.1...v12.4.2
+[12.4.1]: https://github.com/textualize/rich/compare/v12.4.0...v12.4.1
+[12.4.0]: https://github.com/textualize/rich/compare/v12.3.0...v12.4.0
+[12.3.0]: https://github.com/textualize/rich/compare/v12.2.0...v12.3.0
+[12.2.0]: https://github.com/textualize/rich/compare/v12.1.0...v12.2.0
+[12.1.0]: https://github.com/textualize/rich/compare/v12.0.1...v12.1.0
+[12.0.1]: https://github.com/textualize/rich/compare/v12.0.0...v12.0.1
+[12.0.0]: https://github.com/textualize/rich/compare/v11.2.0...v12.0.0
+[11.2.0]: https://github.com/textualize/rich/compare/v11.1.0...v11.2.0
+[11.1.0]: https://github.com/textualize/rich/compare/v11.0.0...v11.1.0
+[11.0.0]: https://github.com/textualize/rich/compare/v10.16.1...v11.0.0
+[10.16.2]: https://github.com/textualize/rich/compare/v10.16.1...v10.16.2
+[10.16.1]: https://github.com/textualize/rich/compare/v10.16.0...v10.16.1
+[10.16.0]: https://github.com/textualize/rich/compare/v10.15.2...v10.16.0
+[10.15.2]: https://github.com/textualize/rich/compare/v10.15.1...v10.15.2
+[10.15.1]: https://github.com/textualize/rich/compare/v10.15.0...v10.15.1
+[10.15.0]: https://github.com/textualize/rich/compare/v10.14.0...v10.15.0
+[10.14.0]: https://github.com/textualize/rich/compare/v10.13.0...v10.14.0
+[10.13.0]: https://github.com/textualize/rich/compare/v10.12.0...v10.13.0
+[10.12.0]: https://github.com/textualize/rich/compare/v10.11.0...v10.12.0
+[10.11.0]: https://github.com/textualize/rich/compare/v10.10.0...v10.11.0
+[10.10.0]: https://github.com/textualize/rich/compare/v10.9.0...v10.10.0
+[10.9.0]: https://github.com/textualize/rich/compare/v10.8.0...v10.9.0
+[10.8.0]: https://github.com/textualize/rich/compare/v10.7.0...v10.8.0
+[10.7.0]: https://github.com/textualize/rich/compare/v10.6.0...v10.7.0
+[10.6.0]: https://github.com/textualize/rich/compare/v10.5.0...v10.6.0
+[10.5.0]: https://github.com/textualize/rich/compare/v10.4.0...v10.5.0
+[10.4.0]: https://github.com/textualize/rich/compare/v10.3.0...v10.4.0
+[10.3.0]: https://github.com/textualize/rich/compare/v10.2.2...v10.3.0
+[10.2.2]: https://github.com/textualize/rich/compare/v10.2.1...v10.2.2
+[10.2.1]: https://github.com/textualize/rich/compare/v10.2.0...v10.2.1
+[10.2.0]: https://github.com/textualize/rich/compare/v10.1.0...v10.2.0
+[10.1.0]: https://github.com/textualize/rich/compare/v10.0.1...v10.1.0
+[10.0.1]: https://github.com/textualize/rich/compare/v10.0.0...v10.0.1
+[10.0.0]: https://github.com/textualize/rich/compare/v9.13.0...v10.0.0
+[9.13.0]: https://github.com/textualize/rich/compare/v9.12.4...v9.13.0
+[9.12.4]: https://github.com/textualize/rich/compare/v9.12.3...v9.12.4
+[9.12.3]: https://github.com/textualize/rich/compare/v9.12.2...v9.12.3
+[9.12.2]: https://github.com/textualize/rich/compare/v9.12.1...v9.12.2
+[9.12.1]: https://github.com/textualize/rich/compare/v9.12.0...v9.12.1
+[9.12.0]: https://github.com/textualize/rich/compare/v9.11.1...v9.12.0
+[9.11.1]: https://github.com/textualize/rich/compare/v9.11.0...v9.11.1
+[9.11.0]: https://github.com/textualize/rich/compare/v9.10.0...v9.11.0
+[9.10.0]: https://github.com/textualize/rich/compare/v9.9.0...v9.10.0
+[9.9.0]: https://github.com/textualize/rich/compare/v9.8.2...v9.9.0
+[9.8.2]: https://github.com/textualize/rich/compare/v9.8.1...v9.8.2
+[9.8.1]: https://github.com/textualize/rich/compare/v9.8.0...v9.8.1
+[9.8.0]: https://github.com/textualize/rich/compare/v9.7.0...v9.8.0
+[9.7.0]: https://github.com/textualize/rich/compare/v9.6.2...v9.7.0
+[9.6.2]: https://github.com/textualize/rich/compare/v9.6.1...v9.6.2
+[9.6.1]: https://github.com/textualize/rich/compare/v9.6.0...v9.6.1
+[9.6.0]: https://github.com/textualize/rich/compare/v9.5.1...v9.6.0
+[9.5.1]: https://github.com/textualize/rich/compare/v9.5.0...v9.5.1
+[9.5.0]: https://github.com/textualize/rich/compare/v9.4.0...v9.5.0
+[9.4.0]: https://github.com/textualize/rich/compare/v9.3.0...v9.4.0
+[9.3.0]: https://github.com/textualize/rich/compare/v9.2.0...v9.3.0
+[9.2.0]: https://github.com/textualize/rich/compare/v9.1.0...v9.2.0
+[9.1.0]: https://github.com/textualize/rich/compare/v9.0.1...v9.1.0
+[9.0.1]: https://github.com/textualize/rich/compare/v9.0.0...v9.0.1
+[9.0.0]: https://github.com/textualize/rich/compare/v8.0.0...v9.0.0
+[8.0.0]: https://github.com/textualize/rich/compare/v7.1.0...v8.0.0
+[7.1.0]: https://github.com/textualize/rich/compare/v7.0.0...v7.1.0
+[7.0.0]: https://github.com/textualize/rich/compare/v6.2.0...v7.0.0
+[6.2.0]: https://github.com/textualize/rich/compare/v6.1.2...v6.2.0
+[6.1.2]: https://github.com/textualize/rich/compare/v6.1.1...v6.1.2
+[6.1.1]: https://github.com/textualize/rich/compare/v6.1.0...v6.1.1
+[6.1.0]: https://github.com/textualize/rich/compare/v6.0.0...v6.1.0
+[6.0.0]: https://github.com/textualize/rich/compare/v5.2.1...v6.0.0
+[5.2.1]: https://github.com/textualize/rich/compare/v5.2.0...v5.2.1
+[5.2.0]: https://github.com/textualize/rich/compare/v5.1.2...v5.2.0
+[5.1.2]: https://github.com/textualize/rich/compare/v5.1.1...v5.1.2
+[5.1.1]: https://github.com/textualize/rich/compare/v5.1.0...v5.1.1
+[5.1.0]: https://github.com/textualize/rich/compare/v5.0.0...v5.1.0
+[5.0.0]: https://github.com/textualize/rich/compare/v4.2.2...v5.0.0
+[4.2.2]: https://github.com/textualize/rich/compare/v4.2.1...v4.2.2
+[4.2.1]: https://github.com/textualize/rich/compare/v4.2.0...v4.2.1
+[4.2.0]: https://github.com/textualize/rich/compare/v4.1.0...v4.2.0
+[4.1.0]: https://github.com/textualize/rich/compare/v4.0.0...v4.1.0
+[4.0.0]: https://github.com/textualize/rich/compare/v3.4.1...v4.0.0
+[3.4.1]: https://github.com/textualize/rich/compare/v3.4.0...v3.4.1
+[3.4.0]: https://github.com/textualize/rich/compare/v3.3.2...v3.4.0
+[3.3.2]: https://github.com/textualize/rich/compare/v3.3.1...v3.3.2
+[3.3.1]: https://github.com/textualize/rich/compare/v3.3.0...v3.3.1
+[3.3.0]: https://github.com/textualize/rich/compare/v3.2.0...v3.3.0
+[3.2.0]: https://github.com/textualize/rich/compare/v3.1.0...v3.2.0
+[3.1.0]: https://github.com/textualize/rich/compare/v3.0.5...v3.1.0
+[3.0.5]: https://github.com/textualize/rich/compare/v3.0.4...v3.0.5
+[3.0.4]: https://github.com/textualize/rich/compare/v3.0.3...v3.0.4
+[3.0.3]: https://github.com/textualize/rich/compare/v3.0.2...v3.0.3
+[3.0.2]: https://github.com/textualize/rich/compare/v3.0.1...v3.0.2
+[3.0.1]: https://github.com/textualize/rich/compare/v3.0.0...v3.0.1
+[3.0.0]: https://github.com/textualize/rich/compare/v2.3.1...v3.0.0
+[2.3.1]: https://github.com/textualize/rich/compare/v2.3.0...v2.3.1
+[2.3.0]: https://github.com/textualize/rich/compare/v2.2.6...v2.3.0
+[2.2.6]: https://github.com/textualize/rich/compare/v2.2.5...v2.2.6
+[2.2.5]: https://github.com/textualize/rich/compare/v2.2.4...v2.2.5
+[2.2.4]: https://github.com/textualize/rich/compare/v2.2.3...v2.2.4
+[2.2.3]: https://github.com/textualize/rich/compare/v2.2.2...v2.2.3
+[2.2.2]: https://github.com/textualize/rich/compare/v2.2.1...v2.2.2
+[2.2.1]: https://github.com/textualize/rich/compare/v2.2.0...v2.2.1
+[2.2.0]: https://github.com/textualize/rich/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/textualize/rich/compare/v2.0.1...v2.1.0
+[2.0.1]: https://github.com/textualize/rich/compare/v2.0.0...v2.0.1
+[2.0.0]: https://github.com/textualize/rich/compare/v1.3.1...v2.0.0
+[1.3.1]: https://github.com/textualize/rich/compare/v1.3.0...v1.3.1
+[1.3.0]: https://github.com/textualize/rich/compare/v1.2.3...v1.3.0
+[1.2.3]: https://github.com/textualize/rich/compare/v1.2.2...v1.2.3
+[1.2.2]: https://github.com/textualize/rich/compare/v1.2.1...v1.2.2
+[1.2.1]: https://github.com/textualize/rich/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/textualize/rich/compare/v1.1.9...v1.2.0
+[1.1.9]: https://github.com/textualize/rich/compare/v1.1.8...v1.1.9
+[1.1.8]: https://github.com/textualize/rich/compare/v1.1.7...v1.1.8
+[1.1.7]: https://github.com/textualize/rich/compare/v1.1.6...v1.1.7
+[1.1.6]: https://github.com/textualize/rich/compare/v1.1.5...v1.1.6
+[1.1.5]: https://github.com/textualize/rich/compare/v1.1.4...v1.1.5
+[1.1.4]: https://github.com/textualize/rich/compare/v1.1.3...v1.1.4
+[1.1.3]: https://github.com/textualize/rich/compare/v1.1.2...v1.1.3
+[1.1.2]: https://github.com/textualize/rich/compare/v1.1.1...v1.1.2
+[1.1.1]: https://github.com/textualize/rich/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/textualize/rich/compare/v1.0.3...v1.1.0
+[1.0.3]: https://github.com/textualize/rich/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/textualize/rich/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/textualize/rich/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/textualize/rich/compare/v0.8.13...v1.0.0
+[0.8.13]: https://github.com/textualize/rich/compare/v0.8.12...v0.8.13
+[0.8.12]: https://github.com/textualize/rich/compare/v0.8.11...v0.8.12
+[0.8.11]: https://github.com/textualize/rich/compare/v0.8.10...v0.8.11
+[0.8.10]: https://github.com/textualize/rich/compare/v0.8.9...v0.8.10
+[0.8.9]: https://github.com/textualize/rich/compare/v0.8.8...v0.8.9
+[0.8.8]: https://github.com/textualize/rich/compare/v0.8.7...v0.8.8
+[0.8.7]: https://github.com/textualize/rich/compare/v0.8.6...v0.8.7
+[0.8.6]: https://github.com/textualize/rich/compare/v0.8.5...v0.8.6
+[0.8.5]: https://github.com/textualize/rich/compare/v0.8.4...v0.8.5
+[0.8.4]: https://github.com/textualize/rich/compare/v0.8.3...v0.8.4
+[0.8.3]: https://github.com/textualize/rich/compare/v0.8.2...v0.8.3
+[0.8.2]: https://github.com/textualize/rich/compare/v0.8.1...v0.8.2
+[0.8.1]: https://github.com/textualize/rich/compare/v0.8.0...v0.8.1
+[0.8.0]: https://github.com/textualize/rich/compare/v0.7.2...v0.8.0
+[0.7.2]: https://github.com/textualize/rich/compare/v0.7.1...v0.7.2
+[0.7.1]: https://github.com/textualize/rich/compare/v0.7.0...v0.7.1
+[0.7.0]: https://github.com/textualize/rich/compare/v0.6.0...v0.7.0
+[0.6.0]: https://github.com/textualize/rich/compare/v0.5.0...v0.6.0
+[0.5.0]: https://github.com/textualize/rich/compare/v0.4.1...v0.5.0
+[0.4.1]: https://github.com/textualize/rich/compare/v0.4.0...v0.4.1
+[0.4.0]: https://github.com/textualize/rich/compare/v0.3.3...v0.4.0
+[0.3.3]: https://github.com/textualize/rich/compare/v0.3.2...v0.3.3
+[0.3.2]: https://github.com/textualize/rich/compare/v0.3.1...v0.3.2
+[0.3.1]: https://github.com/textualize/rich/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/textualize/rich/compare/v0.2.0...v0.3.0

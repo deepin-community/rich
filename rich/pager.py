@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any, Callable
+from typing import Any
 
 
 class Pager(ABC):
@@ -17,9 +17,8 @@ class Pager(ABC):
 class SystemPager(Pager):
     """Uses the pager installed on the system."""
 
-    _pager: Callable[[Any, str], Any] = lambda self, content: __import__("pydoc").pager(
-        content
-    )
+    def _pager(self, content: str) -> Any:  #  pragma: no cover
+        return __import__("pydoc").pager(content)
 
     def show(self, content: str) -> None:
         """Use the same pager used by pydoc."""

@@ -1,28 +1,33 @@
 [![Downloads](https://pepy.tech/badge/rich/month)](https://pepy.tech/project/rich)
 [![PyPI version](https://badge.fury.io/py/rich.svg)](https://badge.fury.io/py/rich)
-[![codecov](https://codecov.io/gh/willmcgugan/rich/branch/master/graph/badge.svg)](https://codecov.io/gh/willmcgugan/rich)
+[![codecov](https://codecov.io/gh/Textualize/rich/branch/master/graph/badge.svg)](https://codecov.io/gh/Textualize/rich)
 [![Rich blog](https://img.shields.io/badge/blog-rich%20news-yellowgreen)](https://www.willmcgugan.com/tag/rich/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/willmcgugan.svg?style=social)](https://twitter.com/willmcgugan)
 
-![Logo](https://github.com/willmcgugan/rich/raw/master/imgs/logo.svg)
+![Logo](https://github.com/textualize/rich/raw/master/imgs/logo.svg)
 
-[English readme](https://github.com/willmcgugan/rich/blob/master/README.md)
- • [中文 readme](https://github.com/willmcgugan/rich/blob/master/README.cn.md)
- • [Lengua española readme](https://github.com/willmcgugan/rich/blob/master/README.es.md)
- • [Deutsche readme](https://github.com/willmcgugan/rich/blob/master/README.de.md)
- • [Läs på svenska](https://github.com/willmcgugan/rich/blob/master/README.sv.md)
- • [日本語 readme](https://github.com/willmcgugan/rich/blob/master/README.ja.md)
- • [한국어 readme](https://github.com/willmcgugan/rich/blob/master/README.kr.md)
- • [Français readme](https://github.com/willmcgugan/rich/blob/master/README.fr.md)
- • [Schwizerdütsch readme](https://github.com/willmcgugan/rich/blob/master/README.de-ch.md)
- • [हिन्दी readme](https://github.com/willmcgugan/rich/blob/master/README.hi.md)
- • [Português brasileiro readme](https://github.com/willmcgugan/rich/blob/master/README.pt-br.md)
+[English readme](https://github.com/textualize/rich/blob/master/README.md)
+ • [简体中文 readme](https://github.com/textualize/rich/blob/master/README.cn.md)
+ • [正體中文 readme](https://github.com/textualize/rich/blob/master/README.zh-tw.md)
+ • [Lengua española readme](https://github.com/textualize/rich/blob/master/README.es.md)
+ • [Deutsche readme](https://github.com/textualize/rich/blob/master/README.de.md)
+ • [Läs på svenska](https://github.com/textualize/rich/blob/master/README.sv.md)
+ • [日本語 readme](https://github.com/textualize/rich/blob/master/README.ja.md)
+ • [한국어 readme](https://github.com/textualize/rich/blob/master/README.kr.md)
+ • [Français readme](https://github.com/textualize/rich/blob/master/README.fr.md)
+ • [Schwizerdütsch readme](https://github.com/textualize/rich/blob/master/README.de-ch.md)
+ • [हिन्दी readme](https://github.com/textualize/rich/blob/master/README.hi.md)
+ • [Português brasileiro readme](https://github.com/textualize/rich/blob/master/README.pt-br.md)
+ • [Italian readme](https://github.com/textualize/rich/blob/master/README.it.md)
+ • [Русский readme](https://github.com/textualize/rich/blob/master/README.ru.md)
+  • [فارسی readme](https://github.com/textualize/rich/blob/master/README.fa.md)
+ • [Türkçe readme](https://github.com/textualize/rich/blob/master/README.tr.md)
 
 Rich는 터미널에서 _풍부한(rich)_ 텍스트와 아름다운 서식을 지원하기 위한 파이썬 라이브러리입니다.
 
-[Rich API](https://rich.readthedocs.io/en/latest/)는 터미널 출력에 색깔과 스타일을 입히기 쉽게 도와줍니다. 또한 Rich는 별다른 설정 없이 표, 진행 바, 마크다운, 소스코드 구문 강조, tracebacks 등을 예쁘게 보여줄 수 있습니다.  
+[Rich API](https://rich.readthedocs.io/en/latest/)는 터미널 출력에 색깔과 스타일을 입히기 쉽게 도와줍니다. 또한 Rich는 별다른 설정 없이 표, 진행 바, 마크다운, 소스코드 구문 강조, tracebacks 등을 예쁘게 보여줄 수 있습니다.
 
-![Features](https://github.com/willmcgugan/rich/raw/master/imgs/features.png)
+![Features](https://github.com/textualize/rich/raw/master/imgs/features.png)
 
 Rich에 대한 동영상 설명을 보시려면 [@fishnets88](https://twitter.com/fishnets88)의 [calmcode.io](https://calmcode.io/rich/introduction.html)를 확인 바랍니다.
 
@@ -30,27 +35,27 @@ Rich에 대한 동영상 설명을 보시려면 [@fishnets88](https://twitter.co
 
 ## 호환성
 
-Rich는 리눅스, OSX, 윈도우에서 동작합니다. 트루 컬러 / 이모지는 새로운 윈도우 터미널에서 동작하지만 구형 터미널에서는 16가지 색으로 제한됩니다. Rich는 파이썬 3.6.1 버전 혹은 그 이후 버전이 필요합니다.
+Rich는 리눅스, OSX, 윈도우에서 동작합니다. 트루 컬러 / 이모지는 새로운 윈도우 터미널에서 동작하지만 구형 터미널에서는 16가지 색으로 제한됩니다. Rich는 파이썬 3.6.3 버전 혹은 그 이후 버전이 필요합니다.
 
 Rich는 [Jupyter notebooks](https://jupyter.org/)에서 별도의 설정없이 바로 동작합니다.
 
 ## 설치
 
-`pip` 또는 좋아하는 Pypi 패키지 매니저로 설치하세요.
+`pip` 또는 좋아하는 PyPI 패키지 매니저로 설치하세요.
 
-```
-pip install rich
+```sh
+python -m pip install rich
 ```
 
 아래 명령어를 통해 터미널에서 Rich 출력을 테스트해보세요.
 
-```
+```sh
 python -m rich
 ```
 
 ## Rich Print
 
-간단하게 당신의 어플리케이션에 rich한 출력을 추가하려면, 파이썬 내장 함수와 signature가 같은 [rich print](https://rich.readthedocs.io/en/latest/introduction.html#quick-start) 메서드를 import 할 수 있습니다. 
+간단하게 당신의 어플리케이션에 rich한 출력을 추가하려면, 파이썬 내장 함수와 signature가 같은 [rich print](https://rich.readthedocs.io/en/latest/introduction.html#quick-start) 메서드를 import 할 수 있습니다.
 따라해보세요:
 
 ```python
@@ -59,7 +64,7 @@ from rich import print
 print("Hello, [bold magenta]World[/bold magenta]!", ":vampire:", locals())
 ```
 
-![Hello World](https://github.com/willmcgugan/rich/raw/master/imgs/print.png)
+![Hello World](https://github.com/textualize/rich/raw/master/imgs/print.png)
 
 ## Rich REPL
 
@@ -70,7 +75,7 @@ Rich는 파이썬 REPL에도 설치할 수 있습니다. 어떤 데이터 구조
 >>> pretty.install()
 ```
 
-![REPL](https://github.com/willmcgugan/rich/raw/master/imgs/repl.png)
+![REPL](https://github.com/textualize/rich/raw/master/imgs/repl.png)
 
 ## 콘솔 사용하기
 
@@ -81,13 +86,13 @@ from rich.console import Console
 
 console = Console()
 ```
- 
+
 콘솔 객체에는 `print` 메서드가 있는데, 내부적으로 내장 `print` 함수와 유사한 인터페이스를 가지고 있습니다. 아래는 예제입니다:
 
 ```python
 console.print("Hello", "World!")
 ```
- 
+
 예상대로 `"Hello World!"`이 터미널에 출력될 것입니다. 내장 `print` 함수와 달리, Rich는 터미널 폭에 맞춰 자동 줄바꿈(word-wrap)을 적용하는 것에 유의하세요.
 
 출력에 색깔과 스타일을 입히는 방법은 몇가지가 있습니다. `style` 키워드 전달인자를 추가해 전체 출력에 대해 스타일을 변경할 수 있습니다. 예제는 다음과 같습니다:
@@ -98,7 +103,7 @@ console.print("Hello", "World!", style="bold red")
 
 다음과 같이 출력됩니다:
 
-![Hello World](https://github.com/willmcgugan/rich/raw/master/imgs/hello_world.png)
+![Hello World](https://github.com/textualize/rich/raw/master/imgs/hello_world.png)
 
 텍스트 한 줄을 한 번에 수정하는 것도 좋습니다. 더욱 세세하게 스타일을 변경하기 위해, Rich는 [bbcode](https://en.wikipedia.org/wiki/BBCode)와 구문이 비슷한 별도의 마크업을 렌더링 할 수 있습니다. 예제는 다음과 같습니다.
 
@@ -106,7 +111,7 @@ console.print("Hello", "World!", style="bold red")
 console.print("Where there is a [bold cyan]Will[/bold cyan] there [u]is[/u] a [i]way[/i].")
 ```
 
-![Console Markup](https://github.com/willmcgugan/rich/raw/master/imgs/where_there_is_a_will.png)
+![Console Markup](https://github.com/textualize/rich/raw/master/imgs/where_there_is_a_will.png)
 
 Console 객체를 활용해 적은 노력으로 복잡한 출력을 손쉽게 만들 수 있습니다. 자세한 내용은 [Console API](https://rich.readthedocs.io/en/latest/console.html) 문서를 확인해주세요.
 
@@ -120,19 +125,19 @@ Rich는 class나 instance, builtin 같은 파이썬 객체의 레포트를 생�
 >>> inspect(my_list, methods=True)
 ```
 
-![Log](https://github.com/willmcgugan/rich/raw/master/imgs/inspect.png)
+![Log](https://github.com/textualize/rich/raw/master/imgs/inspect.png)
 
 자세한 내용은 [inspect docs](https://rich.readthedocs.io/en/latest/reference/init.html#rich.inspect) 문서를 확인해주세요.
 
 # Rich Library
 
-Rich는 CLI에서 우아하게 출력하거나 코드 디버깅을 돕도록 다양한 빌트인 _렌더링을_ 포함하고 있습니다. 
+Rich는 CLI에서 우아하게 출력하거나 코드 디버깅을 돕도록 다양한 빌트인 _렌더링을_ 포함하고 있습니다.
 
 자세한 내용을 확인하려면 제목을 눌러주세요:
 
 <details>
 <summary>Log</summary>
- 
+
 Console 객체는 `print()`와 인터페이스가 유사한 `log()` 메서드를 가지고 있습니다. `Log()`는 호출이 이루어진 파일과 라인, 현재 시간도 같이 출력합니다. 기본적으로 Rich는 파이썬 구조체와 repr string에 대해 신택스 하이라이팅을 지원합니다. 만약 당신이 collection(예를 들어 dict나 list)을 로깅한다면, Rich는 표현 가능한 공간에 맞춰 예쁘게 출력해줍니다. 이러한 기능들에 대한 예시입니다:
 
 ```python
@@ -160,11 +165,11 @@ test_log()
 
 위 코드의 실행 결과는 다음과 같습니다:
 
-![Log](https://github.com/willmcgugan/rich/raw/master/imgs/log.png)
+![Log](https://github.com/textualize/rich/raw/master/imgs/log.png)
 
 `log_locals` 인자를 사용하면 log 메서드가 호출된 곳의 로컬 변수들을 표로 보여준다는 것도 알아두세요.
 
-로그 메서드는 서버처럼 오랫동안 실행되는 어플리케이션을 터미널로 로깅할때 사용할 수 있지만 디버깅 할 때도 매우 좋습니다. 
+로그 메서드는 서버처럼 오랫동안 실행되는 어플리케이션을 터미널로 로깅할때 사용할 수 있지만 디버깅 할 때도 매우 좋습니다.
 
 </details>
 <details>
@@ -172,7 +177,7 @@ test_log()
 
 또한 내장된 [Handler class](https://rich.readthedocs.io/en/latest/logging.html)를 사용해 파이썬의 로깅 모듈의 출력을 형태를 꾸미거나 색을 입힐 수 있습니다. 다음은 예제입니다:
 
-![Logging](https://github.com/willmcgugan/rich/raw/master/imgs/logging.png)
+![Logging](https://github.com/textualize/rich/raw/master/imgs/logging.png)
 
 </details>
 
@@ -195,9 +200,9 @@ test_log()
 
 Rich는 유니코드 박스 문자와 함께 [표](https://rich.readthedocs.io/en/latest/tables.html)를 자유롭게 렌더링할 수 있습니다. 가장자리, 스타일, 셀 정렬 등을 정말 다양하게 구성할 수 있습니다.
 
-![table movie](https://github.com/willmcgugan/rich/raw/master/imgs/table_movie.gif)
+![table movie](https://github.com/textualize/rich/raw/master/imgs/table_movie.gif)
 
-위의 애니메이션은 example 디렉토리의 [table_movie.py](https://github.com/willmcgugan/rich/blob/master/examples/table_movie.py)로 생성되었습니다.
+위의 애니메이션은 example 디렉토리의 [table_movie.py](https://github.com/textualize/rich/blob/master/examples/table_movie.py)로 생성되었습니다.
 
 더 간단한 표 예제입니다:
 
@@ -233,13 +238,13 @@ console.print(table)
 
 이는 다음과 같이 출력됩니다:
 
-![table](https://github.com/willmcgugan/rich/raw/master/imgs/table.png)
+![table](https://github.com/textualize/rich/raw/master/imgs/table.png)
 
-콘솔 출력은 `print()`나 `log()`와 같은 방식으로 렌더링 된다는 것을 주의하세요. 사실, Rich로 표현할 수 있는 것은 무엇이든 headers / rows (심지어 다른 표들도)에 포함할 수 있습니다. 
+콘솔 출력은 `print()`나 `log()`와 같은 방식으로 렌더링 된다는 것을 주의하세요. 사실, Rich로 표현할 수 있는 것은 무엇이든 headers / rows (심지어 다른 표들도)에 포함할 수 있습니다.
 
 `Table` 클래스는 터미널의 폭에 맞춰 필요한 만큼 줄을 내리고 열 길이를 스스로 조절합니다. 위의 표보다 작은 터미널에서 만들어진 표 예시입니다:
 
-![table2](https://github.com/willmcgugan/rich/raw/master/imgs/table2.png)
+![table2](https://github.com/textualize/rich/raw/master/imgs/table2.png)
 
 </details>
 
@@ -259,13 +264,13 @@ for step in track(range(100)):
 
 여러개의 진행 바를 추가하는 것도 어렵지 않습니다. 아래는 공식문서에서 따온 예시입니다:
 
-![progress](https://github.com/willmcgugan/rich/raw/master/imgs/progress.gif)
+![progress](https://github.com/textualize/rich/raw/master/imgs/progress.gif)
 
 칼럼들은 수정해 원하는 세부정보를 보여줄 수도 있습니다. 기본으로 내장된 칼럼들은 완료 퍼센티지, 파일 크기, 파일 속도, 남은 시간입니다. 다운로드 진행을 보여주는 다른 예제입니다:
 
-![progress](https://github.com/willmcgugan/rich/raw/master/imgs/downloader.gif)
+![progress](https://github.com/textualize/rich/raw/master/imgs/downloader.gif)
 
-직접 해보시려면, 진행 바와 함께 여러개의 URL들을 동시에 다운로드 받는 예제인 [examples/downloader.py](https://github.com/willmcgugan/rich/blob/master/examples/downloader.py)를 확인해주세요.
+직접 해보시려면, 진행 바와 함께 여러개의 URL들을 동시에 다운로드 받는 예제인 [examples/downloader.py](https://github.com/textualize/rich/blob/master/examples/downloader.py)를 확인해주세요.
 
 </details>
 
@@ -290,7 +295,7 @@ with console.status("[bold green]Working on tasks...") as status:
 
 이 예제는 터미널에 아래와 같이 출력합니다.
 
-![status](https://github.com/willmcgugan/rich/raw/master/imgs/status.gif)
+![status](https://github.com/textualize/rich/raw/master/imgs/status.gif)
 
 스피너 애니메이션은 [cli-spinners](https://www.npmjs.com/package/cli-spinners)에서 빌려왔습니다. `spinner` 파라미터를 선택해서 특정 스피너를 선택할 수도 있습니다. 어떤 값을 선택할 수 있는지는 아래 명령어를 통해 확인할 수 있습니다:
 
@@ -300,13 +305,13 @@ python -m rich.spinner
 
 위의 명령어를 입력하면 아래와 같은 출력됩니다:
 
-![spinners](https://github.com/willmcgugan/rich/raw/master/imgs/spinners.gif)
+![spinners](https://github.com/textualize/rich/raw/master/imgs/spinners.gif)
 
 </details>
 
 <details>
 <summary>Tree(트리)</summary>
- 
+
 Rich는 가이드라인과 함께 [트리](https://rich.readthedocs.io/en/latest/tree.html)를 표현할 수 있습니다. 파일 구조나, 계층적 데이터를 보여주는데 적합합니다.
 
 트리의 라벨은 간단한 텍스트나 Rich로 표현할 수 있는 것은 모든지 가능합니다. 아래의 예시를 따라해보세요:
@@ -317,9 +322,9 @@ python -m rich.tree
 
 이는 아래와 같이 출력됩니다:
 
-![markdown](https://github.com/willmcgugan/rich/raw/master/imgs/tree.png)
- 
-리눅스의 `tree` 명령어처럼 아무 디렉토리의 트리를 보여주는 스크립트 예제를 보시려면 [tree.py](https://github.com/willmcgugan/rich/blob/master/examples/tree.py)를 확인해주세요.
+![markdown](https://github.com/textualize/rich/raw/master/imgs/tree.png)
+
+리눅스의 `tree` 명령어처럼 아무 디렉토리의 트리를 보여주는 스크립트 예제를 보시려면 [tree.py](https://github.com/textualize/rich/blob/master/examples/tree.py)를 확인해주세요.
 
 </details>
 
@@ -339,9 +344,9 @@ directory = os.listdir(sys.argv[1])
 print(Columns(directory))
 ```
 
-아래 스크린샷은 API에서 뽑은 데이터를 종렬로 표현하는 [칼럼 예제](https://github.com/willmcgugan/rich/blob/master/examples/columns.py)의 출력 결과입니다:
+아래 스크린샷은 API에서 뽑은 데이터를 종렬로 표현하는 [칼럼 예제](https://github.com/textualize/rich/blob/master/examples/columns.py)의 출력 결과입니다:
 
-![columns](https://github.com/willmcgugan/rich/raw/master/imgs/columns.png)
+![columns](https://github.com/textualize/rich/raw/master/imgs/columns.png)
 
 </details>
 
@@ -364,7 +369,7 @@ console.print(markdown)
 
 위 코드는 아래와 같은 출력 결과를 만들 것입니다:
 
-![markdown](https://github.com/willmcgugan/rich/raw/master/imgs/markdown.png)
+![markdown](https://github.com/textualize/rich/raw/master/imgs/markdown.png)
 
 </details>
 
@@ -399,18 +404,18 @@ console.print(syntax)
 
 위 코드는 아래와 같은 출력 결과를 만들 것입니다:
 
-![syntax](https://github.com/willmcgugan/rich/raw/master/imgs/syntax.png)
+![syntax](https://github.com/textualize/rich/raw/master/imgs/syntax.png)
 
 </details>
 
 <details>
 <summary>Tracebacks</summary>
-  
-Rich는 [예쁜 tracebacks](https://rich.readthedocs.io/en/latest/traceback.html)을 표현할 수 있습니다. 이것은 읽기도 더 쉽고 일반적인 파이썬 tracebacks 보다 더 많은 코드를 보여줍니다. uncaught exceptions가 Rich로 출력되도록 Rich를 기본 Traceback 핸들러로 설정할 수도 있습니다. 
+
+Rich는 [예쁜 tracebacks](https://rich.readthedocs.io/en/latest/traceback.html)을 표현할 수 있습니다. 이것은 읽기도 더 쉽고 일반적인 파이썬 tracebacks 보다 더 많은 코드를 보여줍니다. uncaught exceptions가 Rich로 출력되도록 Rich를 기본 Traceback 핸들러로 설정할 수도 있습니다.
 
 OSX에서는 이렇게 출력됩니다 (리눅스도 유사함):
 
-![traceback](https://github.com/willmcgugan/rich/raw/master/imgs/traceback.png)
+![traceback](https://github.com/textualize/rich/raw/master/imgs/traceback.png)
 
 </details>
 
@@ -420,7 +425,7 @@ OSX에서는 이렇게 출력됩니다 (리눅스도 유사함):
 
 Tidelift 구독의 일환으로 가능합니다.
 
-Rich를 포함한 수천가지 다른 패키지들의 메인테이너들은 당신이 앱을 만들기 위해 사용하는 오픈소스 패키지의 상업적인 지원과 유지보수를 위해 Tidelift와 함께 일하고 있습니다. 당신이 사용하는 패키지의 메인테이너에게 비용을 지불하는 대신 시간을 절약하고, 리스크를 줄이고, 코드의 품질을 향상시킬 수 있습니다. [더 자세한 정보는 여기를 참고바랍니다.](https://tidelift.com/subscription/pkg/pypi-rich?utm_source=pypi-rich&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)  
+Rich를 포함한 수천가지 다른 패키지들의 메인테이너들은 당신이 앱을 만들기 위해 사용하는 오픈소스 패키지의 상업적인 지원과 유지보수를 위해 Tidelift와 함께 일하고 있습니다. 당신이 사용하는 패키지의 메인테이너에게 비용을 지불하는 대신 시간을 절약하고, 리스크를 줄이고, 코드의 품질을 향상시킬 수 있습니다. [더 자세한 정보는 여기를 참고바랍니다.](https://tidelift.com/subscription/pkg/pypi-rich?utm_source=pypi-rich&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
 
 # Rich를 사용하는 프로젝트들
 
@@ -448,10 +453,10 @@ Rich를 사용하는 몇가지 프로젝트들입니다:
   자동으로 자막과 영상의 싱크를 맞추세요.
 - [tryolabs/norfair](https://github.com/tryolabs/norfair)
   모든 탐지된 것에 실시간으로 2D 오브젝트 트래킹을 추가하는 경량화된 파이썬 라이브러리.
-- [ansible/ansible-lint](https://github.com/ansible/ansible-lint) 
+- [ansible/ansible-lint](https://github.com/ansible/ansible-lint)
   Ansible-lint가 playbooks를 확인해 잠재적으로 개선될 수 있는 practices나 동작을 확인합니다.
 - [ansible-community/molecule](https://github.com/ansible-community/molecule)
   Ansible Molecule의 테스트 프레임워크
-- +[Many more](https://github.com/willmcgugan/rich/network/dependents)!
+- +[Many more](https://github.com/textualize/rich/network/dependents)!
 
 <!-- This is a test, no need to translate -->

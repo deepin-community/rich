@@ -1,8 +1,116 @@
-rich (10.12.0-1) UNRELEASED; urgency=medium
+rich (13.3.1-2) unstable; urgency=medium
 
-  * update
+  * Team upload.
+  * d/control: add explicit build-dep on python3-attr to fix FTBFS.
+    Closes: #1042318
+  * d/control,copyright: update homepage URL. Closes: #1038963
+  * Standards-Version: 4.6.2 (routine-update)
+  * Reorder sequence of d/control fields by cme (routine-update)
+  * Add salsa-ci file (routine-update)
+  * Set upstream metadata fields: Security-Contact.
 
- -- Sandro Tosi <morph@debian.org>  Wed, 06 Jul 2022 03:46:14 -0400
+ -- Michael R. Crusoe <crusoe@debian.org>  Tue, 12 Sep 2023 11:16:15 +0200
+
+rich (13.3.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 13 Feb 2023 22:31:56 -0500
+
+rich (13.2.0-2) unstable; urgency=medium
+
+  * debian/control
+    - bump b-d on pygments to >= 2.14.0, prevents autopkgtest failures
+    - drop commonmark from b-d, replaced by markdown-it
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 22 Jan 2023 11:52:19 -0500
+
+rich (13.2.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/patches/0001-tests-Adjustments-to-run-tests-with-pygments-2.14.0.patch
+    - drop patch, merged upstream, making the previous NMU gratuitous
+  * debian/control
+    - add markdown-it to b-d, needed by tests
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 21 Jan 2023 22:49:23 -0500
+
+rich (13.0.0-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add patch for pygments 2.14.0 (Closes: #1028619)
+
+ -- Jochen Sprickerhof <jspricke@debian.org>  Sat, 21 Jan 2023 20:51:23 +0100
+
+rich (13.0.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/copyright
+    - extend packaging copyright years
+  * run autopkgtest via autopkgtest-pkg-pybuild
+  * debian/control
+    - b-d on poetry-core not poetry
+    - bump Standards-Version to 4.6.2.0 (no changes needed)
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 03 Jan 2023 16:40:55 -0500
+
+rich (12.6.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 12.6.0; Closes: #1025182
+
+ -- Andrius Merkys <merkys@debian.org>  Thu, 01 Dec 2022 06:21:06 -0500
+
+rich (12.4.4-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Andrius Merkys ]
+  * New upstream version 12.4.4
+
+ -- Andrius Merkys <merkys@debian.org>  Mon, 30 May 2022 16:16:21 -0400
+
+rich (12.1.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Drop dependency on python3-colorama, no longer needed.
+  * Declare Rules-Requires-Root: no.
+  * Add autopkgtest that runs the upstream test suite.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 03 Apr 2022 12:24:04 -0400
+
+rich (11.2.0-1) unstable; urgency=medium
+
+  * New upstream release; Closes: #1006042, #983326
+  * debian/copyright
+    - extend packaging copyright years
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 27 Feb 2022 00:19:34 -0500
+
+rich (10.16.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 04 Jan 2022 21:58:39 -0500
+
+rich (10.15.2-2) unstable; urgency=medium
+
+  * use poetry PEP517 build backend
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 15 Dec 2021 22:49:20 -0500
+
+rich (10.15.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control
+    - bump Standards-Version to 4.6.0.1 (no changes needed)
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 11 Dec 2021 00:53:57 -0500
 
 rich (10.12.0-1) unstable; urgency=medium
 
