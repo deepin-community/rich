@@ -1,9 +1,8 @@
-import sys
+from io import StringIO
 
 import pytest
 
-from rich.segment import ControlType
-from rich.segment import Segment, Segments, SegmentLines
+from rich.segment import ControlType, Segment, SegmentLines, Segments
 from rich.style import Style
 
 
@@ -166,6 +165,34 @@ def test_divide():
     ]
 
 
+# https://github.com/textualize/rich/issues/1755
+def test_divide_complex():
+    MAP = (
+        "[on orange4]          [on green]XX[on orange4]          \n"
+        "                        \n"
+        "                        \n"
+        "                        \n"
+        "              [bright_red on black]Y[on orange4]        \n"
+        "[on green]X[on orange4]                  [on green]X[on orange4]  \n"
+        " [on green]X[on orange4]                   [on green]X\n"
+        "[on orange4]                        \n"
+        "          [on green]XX[on orange4]          \n"
+    )
+    from rich.console import Console
+    from rich.text import Text
+
+    text = Text.from_markup(MAP)
+    console = Console(
+        color_system="truecolor", width=30, force_terminal=True, file=StringIO()
+    )
+    console.print(text)
+    result = console.file.getvalue()
+
+    print(repr(result))
+    expected = "\x1b[48;5;94m          \x1b[0m\x1b[42mXX\x1b[0m\x1b[48;5;94m          \x1b[0m\n\x1b[48;5;94m                        \x1b[0m\n\x1b[48;5;94m                        \x1b[0m\n\x1b[48;5;94m                        \x1b[0m\n\x1b[48;5;94m              \x1b[0m\x1b[91;40mY\x1b[0m\x1b[91;48;5;94m        \x1b[0m\n\x1b[91;42mX\x1b[0m\x1b[91;48;5;94m                  \x1b[0m\x1b[91;42mX\x1b[0m\x1b[91;48;5;94m  \x1b[0m\n\x1b[91;48;5;94m \x1b[0m\x1b[91;42mX\x1b[0m\x1b[91;48;5;94m                   \x1b[0m\x1b[91;42mX\x1b[0m\n\x1b[91;48;5;94m                        \x1b[0m\n\x1b[91;48;5;94m          \x1b[0m\x1b[91;42mXX\x1b[0m\x1b[91;48;5;94m          \x1b[0m\n\n"
+    assert result == expected
+
+
 def test_divide_emoji():
     bold = Style(bold=True)
     italic = Style(italic=True)
@@ -223,6 +250,7 @@ def test_divide_edge_2():
 @pytest.mark.parametrize(
     "text,split,result",
     [
+        ("XX", 4, (Segment("XX"), Segment(""))),
         ("X", 1, (Segment("X"), Segment(""))),
         ("💩", 1, (Segment(" "), Segment(" "))),
         ("XY", 1, (Segment("X"), Segment("Y"))),
@@ -245,6 +273,11 @@ def test_divide_edge_2():
         ("💩X💩Y💩Z💩A💩", 4, (Segment("💩X "), Segment(" Y💩Z💩A💩"))),
         ("XYZABC", 4, (Segment("XYZA"), Segment("BC"))),
         ("XYZABC", 5, (Segment("XYZAB"), Segment("C"))),
+        (
+            "a1あ１１bcdaef",
+            9,
+            (Segment("a1あ１１b"), Segment("cdaef")),
+        ),
     ],
 )
 def test_split_cells_emoji(text, split, result):
@@ -269,4 +302,34 @@ def test_segment_lines_renderable():
         Segment("\n"),
         Segment("foo"),
         Segment("\n"),
+    ]
+
+
+def test_align_top():
+    lines = [[Segment("X")]]
+    assert Segment.align_top(lines, 3, 1, Style()) == lines
+    assert Segment.align_top(lines, 3, 3, Style()) == [
+        [Segment("X")],
+        [Segment("   ", Style())],
+        [Segment("   ", Style())],
+    ]
+
+
+def test_align_middle():
+    lines = [[Segment("X")]]
+    assert Segment.align_middle(lines, 3, 1, Style()) == lines
+    assert Segment.align_middle(lines, 3, 3, Style()) == [
+        [Segment("   ", Style())],
+        [Segment("X")],
+        [Segment("   ", Style())],
+    ]
+
+
+def test_align_bottom():
+    lines = [[Segment("X")]]
+    assert Segment.align_bottom(lines, 3, 1, Style()) == lines
+    assert Segment.align_bottom(lines, 3, 3, Style()) == [
+        [Segment("   ", Style())],
+        [Segment("   ", Style())],
+        [Segment("X")],
     ]

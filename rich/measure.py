@@ -1,8 +1,8 @@
 from operator import itemgetter
-from typing import Callable, Iterable, NamedTuple, Optional, TYPE_CHECKING
+from typing import TYPE_CHECKING, Callable, NamedTuple, Optional, Sequence
 
 from . import errors
-from .protocol import is_renderable
+from .protocol import is_renderable, rich_cast
 
 if TYPE_CHECKING:
     from .console import Console, ConsoleOptions, RenderableType
@@ -96,12 +96,13 @@ class Measurement(NamedTuple):
         if _max_width < 1:
             return Measurement(0, 0)
         if isinstance(renderable, str):
-            renderable = console.render_str(renderable, markup=options.markup)
-        if hasattr(renderable, "__rich__"):
-            renderable = renderable.__rich__()  # type: ignore
+            renderable = console.render_str(
+                renderable, markup=options.markup, highlight=False
+            )
+        renderable = rich_cast(renderable)
         if is_renderable(renderable):
-            get_console_width: Callable[
-                ["Console", "ConsoleOptions"], "Measurement"
+            get_console_width: Optional[
+                Callable[["Console", "ConsoleOptions"], "Measurement"]
             ] = getattr(renderable, "__rich_measure__", None)
             if get_console_width is not None:
                 render_width = (
@@ -124,18 +125,18 @@ class Measurement(NamedTuple):
 def measure_renderables(
     console: "Console",
     options: "ConsoleOptions",
-    renderables: Iterable["RenderableType"],
+    renderables: Sequence["RenderableType"],
 ) -> "Measurement":
     """Get a measurement that would fit a number of renderables.
 
     Args:
         console (~rich.console.Console): Console instance.
+        options (~rich.console.ConsoleOptions): Console options.
         renderables (Iterable[RenderableType]): One or more renderable objects.
-        max_width (int): The maximum width available.
 
     Returns:
         Measurement: Measurement object containing range of character widths required to
-        contain all given renderables.
+            contain all given renderables.
     """
     if not renderables:
         return Measurement(0, 0)
