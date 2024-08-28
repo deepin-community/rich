@@ -1,32 +1,31 @@
 Source: rich
-Maintainer: Sandro Tosi <morph@debian.org>
-Uploaders: Debian Python Team <team+python@tracker.debian.org>
 Section: python
-Testsuite: autopkgtest-pkg-pybuild
 Priority: optional
+Maintainer: Sandro Tosi <morph@debian.org>
 Build-Depends: debhelper-compat (= 13),
                pybuild-plugin-pyproject,
                python3-all,
                python3-markdown-it <!nocheck>,
                python3-attr <!nocheck>,
-               python3-mypy,
+               python3-mypy (>= 0.782),
                python3-poetry-core,
                python3-pygments (>= 2.14.0),
                python3-pytest,
                python3-setuptools,
-               python3-typing-extensions
+               python3-typing-extensions (>= 3.7.4),
 Standards-Version: 4.6.2
-Vcs-Browser: https://salsa.debian.org/python-team/packages/rich
-Vcs-Git: https://salsa.debian.org/python-team/packages/rich.git
 Homepage: https://github.com/Textualize/rich
+Vcs-Git: https://salsa.debian.org/morph/rich.git
+Vcs-Browser: https://salsa.debian.org/morph/rich
 Rules-Requires-Root: no
+Testsuite: autopkgtest-pkg-pybuild
 
 Package: python3-rich
 Architecture: all
 Depends: ${misc:Depends},
-         ${python3:Depends}
-Recommends: ${python3:Recommends}
-Suggests: ${python3:Suggests}
+         ${python3:Depends},
+Recommends: ${python3:Recommends},
+Suggests: ${python3:Suggests},
 Description: render rich text, tables, progress bars, syntax highlighting, markdown and more
  Rich is a Python library for rich text and beautiful formatting in the
  terminal.
