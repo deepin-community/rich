@@ -1,3 +1,21 @@
+rich (13.7.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 04 Mar 2024 18:07:14 -0500
+
+rich (13.7.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/salsa-ci.yml
+    - delete
+  * debian/control
+    - Revert unwelcomed "routine-update: Reorder sequence of d/control fields
+      by cme"
+  * drop DPT
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 01 Mar 2024 16:52:45 -0500
+
 rich (13.3.1-2) unstable; urgency=medium
 
   * Team upload.
